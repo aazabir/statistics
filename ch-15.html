@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html" aria-current="page">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a><ul class="toc-sub"><li><a href="#s0">১. যমজ ভাইয়ের বিভ্রম (Multicollinearity)</a></li><li><a href="#s1">২. ঢেউয়ের রেশ (Autocorrelation)</a></li><li><a href="#s2">৩. টর্চলাইটের আলো (Heteroscedasticity)</a></li></ul></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-15.html">
+<article>
+<h1 class="chapter-title">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</h1>
+<p class="meta">8 min read</p>
+
+<div class="prose">
+
+<p id="p1">রাত তখন বেশ গভীর। জেনারেটরের শব্দ থেমে গেছে অনেক আগেই। দ্বীপের শেষ মাথায়, যেখানে পর্যটকদের কোলাহল একদম নেই, সেখানে বালুর ওপর বসে আছে তিনজন। সামনে শুধু আদিগন্ত কালো সমুদ্র আর তার ওপর চাঁদের আলোর রুপালি ঝিলিমিলি।</p>
+<p id="p2">ফারহান বালিতে পিঠ ঠেকিয়ে আকাশের দিকে তাকিয়ে বলল, “দোস্ত, একটা অদ্ভুত ভয় কাজ করছে।”</p>
+<p id="p3">সাব্বির বলল, “কিসের ভয়? কাল সকালে জাহাজ মিস করার?”</p>
+<p id="p4">ফারহান মাথা নেড়ে বলল, “না রে। আমি ভাবছি, আমরা এত কষ্ট করে গবেষণার জন্য কিছু ডেটা নিলাম সেন্ট মার্টিন থেকে। দেখে মনে হচ্ছে সব ঠিক আছে। কিন্তু ভেতরে ভেতরে যদি কোনো ঝামেলা থাকে? মানে, ওপর দিয়ে ফিটফাট কিন্তু ভেতরে সদরঘাট অবস্থা হলে কী হবে?”</p>
+<p id="p5">আবির হেসে বলল, “তোর ভয়টা অমূলক না। ডাক্তার যেমন রোগী দেখার সময় শুধু ওপরের চেহারা দেখে না, বরং পালস আর প্রেশারও মাপে, আমাদেরও মডেলের কিছু গোপন অসুখ চেক করতে হয়। এই অসুখগুলো থাকলে তোর মডেল যতই সুন্দর দেখাক না কেন, এর কোনো ভবিষ্যৎবাণীই বাস্তবে টিকবে না।”</p>
+<p id="p6">ফারহান উঠে বসে মজা করে বললো, “কী সেই অসুখ? এই অন্ধকারে কি দেখা যাবে?”</p>
+<p id="p7">আবির মুচকি হাসল। “অবশ্যই দেখা যাবে। এই সমুদ্র, আকাশ আর তোর হাতের টর্চলাইট, এরাই আজ তোকে শিখিয়ে দেবে রিগ্রেশন মডেলের বড় তিনটি অসুখের কথা।”</p>
+<h3 id="s0">১. যমজ ভাইয়ের বিভ্রম (Multicollinearity)</h3>
+<p id="p8">আবির সমুদ্রের দিকে আঙুল তুলল। “ওই দিকে তাকা। আকাশ আর সমুদ্র যেখানে মিশেছে। আজ বিকেলে যখন রোদ ছিল, তখন আকাশটাও নীল ছিল, সমুদ্রের পানিও নীল ছিল। এখন যদি আমি তোকে বিকেলের একটা ছবি দেখিয়ে বলি, বল তো এই নীল রংটা কার জন্য তৈরি হয়েছে? আকাশের জন্য নাকি সমুদ্রের জন্য?”</p>
+<p id="p9">সাব্বির বলল, “এটা তো বলা কঠিন। কারণ আকাশ নীল বলেই তো সমুদ্র নীল দেখায়। দুটো তো একে অপরের সাথে ওতপ্রোতভাবে জড়িত। আলাদা করা মুশকিল।”</p>
+<p id="p10">আবির বলল, “ঠিক তাই! পরিসংখ্যানে একেই বলে Multicollinearity বা মাল্টিকোলিনিয়ারিটি। সহজ কথায়, মডেলে অতিরিক্ত বা ডুপ্লিকেট তথ্য দেওয়া।”</p>
+<p id="p11">সে আরেকটু পরিষ্কার করে বলল, “তোকে বাস্তব গবেষণার একটা উদাহরণ দিই। ধর, তুই প্রেডিক্ট করতে চাস একজন কৃষকের নতুন প্রযুক্তির বীজ গ্রহণের সম্ভাবনা কতটুকু। তুই কারণ বা Independent Variable হিসেবে মডেলে দুইটা জিনিস নিলি, কৃষকের বর্তমান বয়স এবং তার কৃষি কাজের মোট অভিজ্ঞতা। আরে ভাই! যার বয়স বেশি, সাধারণ হিসেবে তার কৃষিকাজের অভিজ্ঞতাও তো বেশিই হবে! এই দুইটা ডেটা একে অপরের সাথে খুব শক্তভাবে যুক্ত বা অনেক বেশি সম্পর্কিত। তুই যদি মডেলে দুইটাকেই একসাথে ঢোকাস, তাহলে মডেল কনফিউজড হয়ে যেতে পারে। সে বুঝতে পারবে না বীজ গ্রহণের প্রভাবের ক্রেডিট সে কাকে দেবে। বয়সকে নাকি অভিজ্ঞতাকে? ফলে পুরো হিসাব জগাখিচুড়ি হয়ে যাবে।”</p>
+<p id="p12">ফারহান বলল, “মানে একই কথা দুইবার বলা হয়ে যাচ্ছে এখানে?”</p>
+<p id="p13">“একদম। আরেকটা উদাহরণ দিই। ধর তুই কোনো একটা মডেলে মানুষের ইনকাম আর সেভিংস দুইটাকে ইন্ডিপেন্ডেন্ট ভ্যারিয়েবল হিসাবে যোগ করলি। এখন স্বাভাবিকভাবেই যার ইনকাম বেশি তার তো সেভিংসও বেশি হবে। আবার যার ইনকাম কম তার সেভিংসও কম। এখানেও মডেল কনফিউজড হয়ে যাবে। এককথায় বললে, মাল্টিকোলিনিয়ারিটি হলো রিগ্রেশন মডেলে ব্যবহৃত স্বাধীন চলকগুলোর মধ্যে মাত্রাতিরিক্ত সম্পর্ক বা নির্ভরশীলতা। এই অসুখ সারানোর উপায় হলো যমজ ভাইদের যেকোনো একজনকে মডেলে রাখা, দুইজনকে একসাথে নয়।” তবে একই সাথে খেয়াল রাখতে হবে মাল্টিকোলিনিয়ারিটি থাকলেই যে মডেল থেকে সরাসরি বাদ দিতে হবে সেটা না। মাল্টিকোলিনিয়ারিটি এড্রেস করার নানা রকম পদ্ধতি আছে।</p>
+<h3 id="s1">২. ঢেউয়ের রেশ (Autocorrelation)</h3>
+<p id="p14">আবির এবার সমুদ্রের ঢেউগুলোর দিকে ইশারা করল। “ঢেউগুলোর দিকে তাকা। এই যে একটা একটা ঢেউ আছড়ে পড়ল, এখানে ঢেউ গুলো কি একদমই স্বাধীন? নাকি আগের ঢেউয়ের ধাক্কা বা রেশ তার মধ্যে রয়ে গেছে?”</p>
+<p id="p15">ফারহান একটু ভেবে বলল, “রেশ তো থাকবেই। সাগরে ঢেউ তো একটা চেইন সিস্টেমে আসে। আগের ঢেউয়ের সাথে পরের ঢেউ সম্পর্কিত। এটা পুরোপুরি র‍্যান্ডম না, এর মধ্যে একটা সম্পর্ক আছে।”</p>
+<p id="p16">আবির মাথা নেড়ে বলল, “ঠিক তাই। বাস্তবে ঢেউয়ের এই ছন্দ বা সম্পর্ক দেখতে সুন্দর, কিন্তু রিগ্রেশন মডেলে এটা একটা বিপদ। একেই বলে Autocorrelation বা অটোকোরিলেশন। রিগ্রেশনের একটা সবচেয়ে বড় শর্ত হলো মডেলের ভুলগুলো বা Error গুলোকে হতে হবে সম্পূর্ণ বিক্ষিপ্ত এবং স্বাধীন। অর্থাৎ, আজকের ভুলের সাথে আগামীকালের ভুলের কোনো সম্পর্ক থাকা চলবে না। কিন্তু যদি দেখি আজকের ভুলের ওপর গতকালের ভুলের প্রভাব আছে, বা ভুলের মধ্যে একটা প্যাটার্ন তৈরি হচ্ছে, তখন বুঝবি মডেল ঝামেলা আছে। একে শতভাগ বিশ্বাস করা ঠিক হবে না।”</p>
+<p id="p17">ফারহান জিজ্ঞেস করল, “এই ব্যাপারটা ডেটার ক্ষেত্রে কীভাবে ঘটে?”</p>
+<p id="p18">আবির বুঝিয়ে বলল, “ধর, শেয়ার বাজার বা আবহাওয়ার ডেটা নিয়ে কাজ করছিস, যাকে টাইম সিরিজ ডেটা বলে। আজ যদি তাপমাত্রা ৩৫ ডিগ্রি হয়, কাল হুট করে ০ ডিগ্রি হবে না। কাল হয়তো ৩৪ বা ৩৬ হবে। অর্থাৎ, আগামীকালকের ডেটা আজকের ডেটার ওপর সরাসরি নির্ভর করছে। এখন তুই যদি এমন ডেটা দিয়ে সাধারণ রিগ্রেশন করিস, মডেল একটা মারাত্মক ভুল করবে। সে শুধু আগের দিনের ডেটা নকল করে আজকের প্রেডিকশন দেবে আর ভাববে সে খুব দারুণ কাজ করছে।”</p>
+<p id="p19">“এতে সমস্যা কোথায়?” ফারহান জানতে চাইল।</p>
+<p id="p20">“সমস্যা হলো ওভার কনফিডেন্স!” আবির উত্তর দিল। “মডেল তোকে দেখাবে যে তার ফলাফল খুব ভালো, কিন্তু আসলে সে শুধু অতীতের রেশ ধরে চলছে বা সিদ্ধান্ত নিচ্ছে, ডেটার ভেতরের নতুন কোনো সম্পর্ক সে শিখছে না। এমন মডেল দিয়ে ভবিষ্যতের অজানা কিছু প্রেডিক্ট করতে গেলে তুই ডাহা ফেল করবি। এজন্যই ডেটায় এমন রেশ আছে কি না তা মাপার জন্য আমরা বিভিন্ন টেস্ট করি। ডেটায় ঢেউয়ের মতো রেশ থাকলে সাধারণ রিগ্রেশন দিয়ে কাজ হয় না, তখন টাইম সিরিজ অ্যানালাইসিসের দিকে যেতে হয়।”</p>
+<h3 id="s2">৩. টর্চলাইটের আলো (Heteroscedasticity)</h3>
+<p id="p21">আবির এবার ফারহানের হাত থেকে টর্চলাইটটা নিল। সে আলোটা বালুর ওপর একদম কাছ থেকে ফেলল।</p>
+<p id="p22">“ভালো করে দেখ। টর্চটা যখন আমি বালুর খুব কাছে ধরছি, তখন আলোর গোল্লাটা কেমন দেখাচ্ছে?”</p>
+<p id="p23">সাব্বির বলল, “খুব ছোট, উজ্জ্বল আর একদম নির্দিষ্ট একটা জায়গায় আছে।”</p>
+<p id="p24">আবির এবার হাতটা ওপরে তুলল এবং আলোটা দূর থেকে ফেলল। “আর এখন?”</p>
+<p id="p25">সাব্বির বলল, “এখন আলোটা অনেক বড় হয়ে ছড়িয়ে পড়েছে। চারপাশটা বেশ ঝাপসা আর হালকা হয়ে গেছে।”</p>
+<p id="p26">আবির হাসল। “এটাই হলো Heteroscedasticity বা হেটারোস্কেডাস্টিসিটি। নামটা খটমটে, কিন্তু ব্যাপারটা ঠিক এই টর্চলাইটের আলোর মতোই। রিগ্রেশনে আমরা সবসময় চাই, মডেলের ভুলগুলোর Variance সব জায়গায় সমান থাকবে, যাকে হোমোস্কেডাস্টিসিটি বলে। কিন্তু টর্চের আলো ছড়িয়ে পড়ার মতো মডেলের ভুলগুলো বা এরর যদি একেক জায়গায় একেক রকম হয়, তখনই এই সমস্যাটা ধরা পড়ে।”</p>
+<p id="p27">একটু থেমে সে খুব সুন্দর একটা বাস্তব উদাহরণ দিল। “মনে কর, তুই মানুষের আয় দিয়ে তাদের খাবারের খরচ প্রেডিক্ট করছিস। যাদের আয় কম, তাদের হাতে অপশনও কম। তারা মোটামুটি সবাই ডাল ভাত বা খুব সাধারণ খাবার খায়। তাই তাদের সবার খরচের হিসাবটা খুব কাছাকাছি থাকে, ঠিক টর্চের তীক্ষ্ণ আলোর মতো।”</p>
+<p id="p28">আবির দূর থেকে আলো ফেলার ভঙ্গি করে বলল, “অন্যদিকে, যাদের আয় অনেক বেশি, তাদের খরচের কোনো ঠিক ঠিকানা নেই। কেউ হয়তো ফাইভ স্টারে ৫০০০ টাকার স্টেক খায়, আবার কেউ স্বাস্থ্য সচেতন হয়ে ৫০০ টাকার সালাদ খায়। তাদের খরচের ডেটা অনেক বেশি ছড়ানো (অনেক ভ্যারিয়েশন)। এখন রিগ্রেশন মডেল সবসময় চায় সবার ডেটার ভেতর দিয়ে একটা সোজা লাইন টেনে গড়পড়তা নিয়ম বানাতে। কিন্তু একদলের ডেটা যখন খুব ডিসিপ্লিনড আর আরেকদলের ডেটা যখন একদম এলোমেলো থাকে, তখন ওই সোজা লাইনটা কাজ করে না। মডেল তখন মারাত্মক কনফিউজড হয়ে যায়।”</p>
+<p id="p29">“ফলে কী হয়?” ফারহান জানতে চাইল।</p>
+<p id="p30">“ফলে মডেল কম আয়ের মানুষদের জন্য ভালো প্রেডিক্ট করলেও, বেশি আয়ের মানুষদের ক্ষেত্রে গিয়ে বিশাল ভুল করে বসে। ঠিক ওই ছড়ানো আলোটার মতো, তোর প্রেডিকশনগুলোও তখন ঝাপসা আর এলোমেলো হয়ে যায়। সবচেয়ে বড় সমস্যা হলো, এই সমস্যা থাকলে মডেল তোকে যে রেজাল্ট বা p-value দেখাবে, সেটা আর ভরসা করার মতো থাকে না। তুই হয়তো ভুল ভ্যারিয়েবলকেও সিগনিফিক্যান্ট ভেবে বসে থাকবি।”</p>
+<p id="p31">তিন বন্ধু উঠে দাঁড়াল এবং হোটেলের দিকে পা বাড়াল। কাল সকালে জাহাজ।</p>
+<p id="p32">আবির হাঁটতে হাঁটতে ভাবল, ডেটার এই অসুখগুলো আসলে ডেটার দোষ না, বরং এগুলো হলো ডেটার লুকানো চরিত্র। এগুলো ধরতে পারাটাই একজন ভালো গবেষকের কাজ। ফেরার পথে তারা আর শুধু কিছু সংখ্যা নিয়ে ফিরবে না, ফিরবে একদম নতুন এক দৃষ্টি নিয়ে। যে দৃষ্টিতে আপাতদৃষ্টির ভুলের মধ্যেও একটা চমৎকার প্যাটার্ন খুঁজে পাওয়া যায়।</p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-14.html"><span>Previous chapter</span><b>কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</b></a><a class="pg next" href="ch-16.html"><span>Next chapter</span><b>গাণিতিক ছকে জীবনের সমীকরণ</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html" aria-current="page">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-07.html">
+<article>
+<h1 class="chapter-title">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</h1>
+<p class="meta">10 min read</p>
+
+<div class="prose">
+
+<p id="p1">পরদিন সকালে লেকের রূপটা একদম অন্যরকম। গতকাল পানি যেমন আয়নার মতো স্থির ছিল, আজ আর তেমন নেই। কোথাও ছোট ছোট ঢেউ, কোথাও আবার একদম শান্ত। আবির অনেকক্ষণ ধরে পানির এই ওঠানামা দেখছিল। তার মনে হলো, পরিসংখ্যানের ডেটাও অনেকটা এই লেকের পানির মতোই। সব জায়গায় সমান থাকে না। কোথাও ভিড় বেশি, কোথাও একদম ফাঁকা। গতকাল তারা জেনেছে ডেটা কতটা ছড়ানো বা Dispersion নিয়ে, কিন্তু সেই ছড়ানোটা দেখতে আসলে কেমন সেটা বুঝতে পারাও অনেক গুরুত্বপূর্ণ।</p>
+<p id="p2">ফারহান কফির মগ হাতে পাশে এসে দাঁড়াল। সে মজা করে জিজ্ঞেস করল, “কিরে, লেকের ঢেউ গুনছিস নাকি?”</p>
+<p id="p3">আবির হাসল। “না রে। ভাবছিলাম, কালকে যেসব সংখ্যা নিয়ে আমরা কথা বললাম, যেমন গাণিতিক গড়, রেঞ্জ বা ভ্যারিয়েন্স, সেগুলো যদি আমরা গ্রাফ পেপারে ছবি এঁকে দেখি, তাহলে দেখতে কেমন দেখাবে?”</p>
+<p id="p4">ফারহান বলল, “হয়তো কিছু ফোঁটা ফোঁটা দাগ হবে, তাই না?”</p>
+<p id="p5">“শুধু এলোমেলো দাগ না,” আবির বুঝিয়ে বলল। “ডেটাগুলো যখন গ্রাফে সাজানো হয়, তখন তারা মিলে একটা নির্দিষ্ট আকার বা শেপ তৈরি করে। ডেটার এই আকারটাকেই পরিসংখ্যানে বলা হয় Distribution বা বিন্যাস। এর মানে হলো, ডেটাগুলো ঠিক কোথায় বেশি জড়ো হয়ে আছে, আর কোথায় কম আছে, সেটা চোখের সামনে ফুটে ওঠে।”</p>
+<p id="p6">সাব্বিরও এসে তাদের সাথে যোগ দিল। সে জিজ্ঞেস করল, “শুধু ছবি দেখলেই কি সব বোঝা যাবে?”</p>
+<p id="p7">আবির বলল, “পুরোপুরি না হলেও, ডেটার জগতে এই ছবির ধারণাটা খুব শক্তিশালী একটা বিষয়। ধর, আমরা এই রিসোর্টের ১০০ জন গেস্টের বয়সের তথ্য নিলাম। এখন যদি আমরা দেখি যে কতজন মানুষের বয়স ২০ থেকে ৩০ বছরের মধ্যে, আবার কতজন মানুষের বয়স ৩০ থেকে ৪০ বছরের মধ্যে, এভাবে গুনে গুনে যদি একটা তালিকা বা ছবি সাজাই, তাহলে আমরা যেটা পাবো, তাকে বলা হয় Frequency Distribution বা গণসংখ্যা নিবেশন। সোজা কথায়, এটা আমাদের বলে দেয় যে বাস্তবে আমাদের ডেটায় আসলে ঠিক কী ঘটেছে।”</p>
+<p id="p8">ফারহান কৌতূহল নিয়ে বলল, “বর্তমান তো বুঝলাম, আর ভবিষ্যৎ?”</p>
+<p id="p9">আবির মাথা নেড়ে বলল, “যখন আমরা ডেটার বর্তমান অবস্থা দেখে কোনো মানের ভবিষ্যৎ সম্ভাবনা নিয়ে কথা বলি, যেমন ভবিষ্যতে কোন বয়সের গেস্ট আসার সম্ভাবনা সবচেয়ে বেশি, তখন সেই ছবিটাকে বলা হয় Probability Distribution বা সম্ভাবনার বিন্যাস। একদম সহজভাবে বললে, Frequency Distribution হলো অতীতে ঘটে যাওয়া বাস্তব ঘটনার হিসাব, আর Probability Distribution হলো ভবিষ্যতে কী হতে পারে তার একটা সম্ভাবনার ছবি।”</p>
+<p id="p10">ফারহান কফিতে একটা চুমুক দিয়ে লেকের দিকে তাকিয়ে রইল। তারপর বলল, “তোর ওই বাস্তব ঘটনার হিসাব আর সম্ভাবনার ছবি কথাটা মাথায় ঘুরছে। বিষয়টা কি আরেকটু ক্লিয়ার করে বলবি? সম্ভাবনা বা Probability দিয়ে আমরা ভবিষ্যৎ কীভাবে দেখতে পারি?”</p>
+<p id="p11">আবির হাসল। সে পকেট থেকে কাল রাতের খেলা একটা লুডুর ছক্কা বের করে ফারহানের হাতে দিল। “চল, এই ছক্কাটা দিয়েই বিষয়টা বুঝি। তুই এখন এই ছক্কাটা ১০ বার চাল।”</p>
+<p id="p12">ফারহান ছক্কা চালতে শুরু করল। আর সাব্বির মনোযোগ দিয়ে সেটার হিসাব রাখতে লাগল। ১০ বার চালার পর দেখা গেল, ১ পড়েছে ২ বার, ২ পড়েছে ০ বার, ৩ পড়েছে ৪ বার, ৪ পড়েছে ১ বার, ৫ পড়েছে ২ বার এবং ৬ পড়েছে ১ বার।</p>
+<p id="p13">আবির বলল, “এই যে সাব্বির এতক্ষণ ধরে হিসাবটা খাতায় লিখল, এটা হলো আমাদের Frequency Distribution। এটা একদম সলিড এবং প্রমাণিত বাস্তব। ১০ বার ছক্কা চালার পর ঠিক কী কী ফলাফল এসেছে, এটা হলো তার একটা সরাসরি রেকর্ড। এখানে দেখা যাচ্ছে ৩ সংখ্যাটি সবচেয়ে বেশি বার পড়েছে, আর ২ সংখ্যাটি একবারও পড়েনি।”</p>
+<p id="p14">ফারহান মাথা নাড়ল এবং বলল, “বুঝতে পেরেছি। এটা হলো আমাদের অতীত বা বাস্তব ডেটা।”</p>
+<p id="p15">“একদম ঠিক বলেছিস,” আবির সায় দিল। “এবার তুই একটু চিন্তা করে আমাকে বল, তুই যদি এখন ১১ নম্বর বারের মতো ছক্কাটা চালিস, তাহলে কি ৩ পড়ার সম্ভাবনা সবচেয়ে বেশি থাকবে? নাকি ২ পড়ার কোনো সম্ভাবনাই থাকবে না, যেহেতু আগে একবারও ২ পড়েনি?”</p>
+<p id="p16">ফারহান একটু ভেবে বলল, “আরে না! ছক্কার তো ছয়টা পিঠই একদম সমান। আগেরবার যা ইচ্ছা তা ই পড়ুক না কেন, পরেরবার যেকোনো সংখ্যা পড়ার চান্স তো আগের মতোই সমান থাকবে। প্রতিটা সংখ্যা পড়ার চান্সই তো ৬ ভাগের ১ ভাগ।”</p>
+<p id="p17">আবির তুড়ি বাজিয়ে উৎসাহ নিয়ে বলল, “এই তো তুই আসল বিষয়টা ধরে ফেলেছিস! এই যে তুই হিসাব করে বললি প্রতিটা সংখ্যা পড়ার চান্স ৬ ভাগের ১ ভাগ বা প্রায় ১৬.৬৭ শতাংশ, ঠিক এটাই হলো Probability Distribution। এটা কোনো অতীতের ঘটে যাওয়া ডেটা নয়, বরং এটা হলো ছক্কাটার আচরণের একটা গাণিতিক মডেল বা ভবিষ্যতের সম্ভাবনার ছবি।”</p>
+<p id="p18">আবির বালিতে দুটো গ্রাফ আঁকার ভঙ্গি করে বলতে শুরু করল, “Frequency Distribution হলো অনেকটা ক্যামেরায় তোলা একটা সাময়িক স্ন্যাপশটের মতো। তুই মাত্র ১০ বার ছক্কা চাললে ডেটা একটু এলোমেলো মনে হতেই পারে। তোর মনে হতে পারে ৩ বুঝি তোর জন্য খুব লাকি নাম্বার। কিন্তু Probability Distribution আমাদের এই সাময়িক বিভ্রম থেকে বাঁচিয়ে আসল সত্যিটা বা ভবিষ্যতের মূল নকশাটা বলে দেয়।”</p>
+<p id="p19">সাব্বির এতক্ষণ চুপচাপ শুনছিল, এবার সে বলে উঠল, “তার মানে দাঁড়াচ্ছে, আমরা যদি অনেকবার ছক্কা চালি, তাহলে ঠিক কী হবে?”</p>
+<p id="p20">“দারুণ একটা প্রশ্ন করেছিস!” আবির বলল। “তুই যদি ছক্কাটা মাত্র ১০ বার না চেলে ১০ হাজার বার চালিস, তাহলে অবাক হয়ে দেখবি ওই ২ বা ৩ পড়ার হার একদম কাছাকাছি চলে এসেছে। তখন সবগুলো সংখ্যা পড়ার হারই ওই ১৬.৬৭ শতাংশের আশেপাশে থাকবে। অর্থাৎ, বাস্তব ঘটনা বা Frequency এর পরিমাণ তুই যত বাড়াতে থাকবি, ডেটা শেষ পর্যন্ত গিয়ে ওই সম্ভাবনার মূল নকশার বা Probability Distribution এর সাথেই পুরোপুরি মিলে যাবে।”</p>
+<p id="p21">আবির এবার পুরো আলোচনার উপসংহার টানল, “বাস্তব জীবনের গবেষণায় আমরা ঠিক এই কাজটাই করে থাকি। আমরা হয়তো অল্প কিছু মানুষের কাছ থেকে ডেটা বা Frequency সংগ্রহ করি। কিন্তু আমাদের আসল উদ্দেশ্য থাকে ওই সংগৃহীত ডেটার পেছনের Probability Distribution বা মূল নকশাটাকে খুঁজে বের করা। যাতে আমরা খুব সহজেই বুঝতে পারি ভবিষ্যতে বা বৃহত্তর পরিসরে জিনিসটা ঠিক কেমন আচরণ করবে।”</p>
+<p id="p22">কথা বলতে বলতে তিনজন লেকের পাড় ধরে হাঁটতে লাগল। হাঁটতে হাঁটতে আবির হঠাৎ এক জায়গায় থেমে গেল। সে ভেজা বালি দিয়ে একটা উল্টানো বাটির মতো আকৃতি বানাল, যার মাঝখানটা বেশ উঁচু, আর দুই পাশ ধীরে ধীরে ঢালু হয়ে নিচের দিকে নেমে গেছে।</p>
+<p id="p23">“এই যে শেপটা দেখছিস, এটা পরিসংখ্যানের জগতে এক কথায় সুপারস্টার!” আবির হাসিমুখে বলল। “এই আকারটাকে বলা হয় Normal Distribution বা পরিমিত বিন্যাস।”</p>
+<p id="p24"><img src="media/image1.jpeg" alt="Bell curve symbol graph distribution deviation Vector Image" loading="lazy"></p>
+<p id="p25">গ্রাফঃ নরমাল ডিস্ট্রিবিউশন</p>
+<p id="p26">সাব্বির অবাক হয়ে জিজ্ঞেস করল, “সবাই শুধু এই একটা নির্দিষ্ট শেপ বা আকার নিয়ে এত কথা বলে কেন?”</p>
+<p id="p27">“এর মূল কারণ হলো, বাস্তব জীবনের অনেক ডেটাই প্রাকৃতিকভাবে বা নিজে থেকেই এই আকার ধারণ করে,” আবির ব্যাখ্যা করতে শুরু করল। “উদাহরণস্বরূপ ধর, মানুষের উচ্চতা বা পরীক্ষার নম্বরের কথা। খুব কম মানুষই একেবারে অনেক বেশি লম্বা হয়, আবার একেবারে অনেক বেশি খাটো মানুষের সংখ্যাও কিন্তু বেশ কম। বেশিরভাগ মানুষই থাকে মাঝামাঝি বা গড় উচ্চতার কাছাকাছি। ঠিক এই কারণেই গ্রাফের মাঝখানের অংশটা, অর্থাৎ গড়ের জায়গাটা উঁচু হয়ে থাকে, আর দুই পাশের প্রান্তগুলো আস্তে আস্তে নিচু হয়ে যায়।”</p>
+<p id="p28">ফারহান একটু ভেবে বলল, “তার মানে বলা যায়, এটা একটা দারুণ ব্যালেন্সড বা ভারসাম্যপূর্ণ শেপ, তাই তো?”</p>
+<p id="p29">“একদম ঠিক বলেছিস,” আবির বলল। “এই ধরনের সুষম ডিস্ট্রিবিউশনকে পরিসংখ্যানে বলে Symmetric Distribution। এখানে ডেটা তার গাণিতিক গড়ের দুই পাশে প্রায় সমানভাবে ছড়ানো অবস্থায় থাকে।”</p>
+<p id="p30">এরপর আবির বালির সেই বাটিটা হাত দিয়ে মুছে ফেলল এবং নতুন একটা ছবি আঁকল। এবার পাহাড়ের চূড়াটা মাঝখানে না থেকে একপাশে সরে গেছে, আর অন্য পাশে তৈরি হয়েছে একটা লম্বা লেজের মতো অংশ।</p>
+<p id="p31">“কিন্তু বাস্তব জীবনের সব ডেটা সব সময় এত সুন্দর আর ব্যালেন্সড হয় না,” আবির বুঝাতে শুরু করল। “অনেক সময় ডেটা সুষম না হয়ে কোনো একদিকে বেশি ঝুঁকে থাকে বা হেলে পড়ে। ডেটার এই একদিকে ঝুঁকে থাকা বা বেঁকে থাকাকেই পরিসংখ্যানে বলা হয় Skewness।”</p>
+<p id="p32">সে বিষয়টা আরও পরিষ্কার করে বলল, “গ্রাফের লেজটা ঠিক যেদিকে লম্বা হয়ে ছড়িয়ে থাকে, স্কিউনেসের নামটাও সেভাবেই দেওয়া হয়। লেজটা ডান দিকে লম্বা হয়ে গেলে তাকে বলে Right-Skewed বা ডান দিকে বাঁকা, আর লেজটা বাম দিকে লম্বা হলে তাকে বলে Left-Skewed বা বাম দিকে বাঁকা।”</p>
+<p id="p33">ফারহান বলল, “তাত্ত্বিক কথার চেয়ে বরং একটা প্র্যাকটিক্যাল বা বাস্তব জীবনের উদাহরণ দে। তাহলে বুঝতে সুবিধা হবে।”</p>
+<p id="p34"><img src="media/image2.jpeg" alt="Skewness | Asquareschool" loading="lazy"></p>
+<p id="p35">গ্রাফঃ স্কিউনেস</p>
+<p id="p36">“ধর, মানুষের আয়ের কথা,” আবির বলল। “আমাদের সমাজে খেয়াল করলে দেখবি, বেশিরভাগ মানুষের আয়ই কম বা মাঝারি সীমার মধ্যে থাকে। ফলে গ্রাফের বাম দিকে একটা বড় চূড়া তৈরি হয়। কিন্তু এমন অল্প কিছু মানুষ আছেন, যাদের আয় আকাশছোঁয়া! ওই অল্প কয়েকজন অতি-ধনী মানুষের ডেটাই গ্রাফের ডান দিকে একটা লম্বা লেজের মতো অংশ তৈরি করে দেয়। এটাই হলো Right-Skewed বা ধনাত্মক বঙ্কিমতার একটা দারুণ বাস্তব উদাহরণ।”</p>
+<p id="p37">সাব্বির মাথা নেড়ে বলল, “ওহ, এবার বুঝলাম! তার মানে গ্রাফের লেজটা দেখেই আমরা খুব সহজে ডেটার ঝোঁকটা ধরে ফেলতে পারব!”</p>
+<p id="p38">“একদম ঠিক ধরেছিস!” আবির হাসিমুখে সায় দিল।</p>
+<p id="p39">লেকের পাড় ধরে কিছুটা এগিয়ে গিয়ে আবির আবার দাঁড়াল। সে বলল, “তবে ডেটার আকার বোঝার জন্য শুধু লেজ বা স্কিউনেস দেখলেই হবে না, আরও একটা গুরুত্বপূর্ণ জিনিস আছে। ডেটার চূড়াটা ঠিক কতটা খাড়া বা কতটা চ্যাপ্টা, সেটাও এনালাইসিসের জন্য খুব দরকারি একটা বিষয়।”</p>
+<p id="p40">সে দুই হাত দিয়ে পাহাড়ের মতো আকার বানিয়ে দেখিয়ে বলল, “ধর, পাশাপাশি দুটো পাহাড় আছে। দুটো পাহাড়ই দেখতে একদম ব্যালেন্সড বা সিমেট্রিক। কিন্তু এদের মধ্যে একটা পাহাড় খুব খাড়া হয়ে ওপরে উঠে গেছে, আর অন্যটা বেশ চ্যাপ্টা বা সমতল টাইপের। ডেটার চূড়ার ঠিক এই পার্থক্যটাই মাপা হয় Kurtosis দিয়ে।”</p>
+<p id="p41"><img src="media/image3.png" alt="Skewness vs. Kurtosis: What&#39;s the Difference? | by Piotr Szymanski | Python in Plain English" loading="lazy"></p>
+<p id="p42">গ্রাফঃ কার্টোসিস</p>
+<p id="p43">আবির বিষয়টা আরও সহজ করে বুঝিয়ে বলল, “কার্টোসিস মূলত আমাদের এটা বলে দেয় যে, ডেটাগুলো কতটা তার কেন্দ্রের দিকে একসাথে জটলা পাকিয়ে আছে, আর দুই প্রান্তের চরম মানগুলো বা Extreme values গুলো ডেটাতে কতটা প্রভাব ফেলছে।”</p>
+<p id="p44">সাব্বির হো হো করে হেসে উঠল এবং বলল, “তোর এত কথার সারমর্ম হলো, সহজ কথায় ডেটার পেট মোটা নাকি চিকন, সেটা দেখাই হলো কার্টোসিসের কাজ, তাই তো?”</p>
+<p id="p45">“দারুণ বলেছিস!” আবির হাসতে হাসতে সায় দিল। “গ্রাফের চূড়া যত খাড়া হবে, তুই বুঝবি ডেটা তত বেশি তার কেন্দ্রের কাছাকাছি বা গড়ের আশেপাশে জড়ো হয়ে আছে। আর চূড়া যত চ্যাপ্টা হবে, বুঝতে হবে ডেটা তত বেশি চারপাশে ছড়িয়ে ছিটিয়ে আছে।”</p>
+<p id="p46">ফারহান এবার একটু সিরিয়াস হয়ে একটা প্রশ্ন করল, “আচ্ছা, এই Skewness আর Kurtosis কষ্ট করে মেপে আমাদের আসল লাভটা কী? আমরা এগুলো কেন শিখছি?”</p>
+<p id="p47">আবির গুছিয়ে উত্তর দিল, “সবচেয়ে বড় লাভ হলো, আমাদের সংগৃহীত ডেটা আসলেই Normal Distributed কি না, সেটা বৈজ্ঞানিকভাবে পরীক্ষা করা। যেকোনো গবেষণায় এটা জানা খুব জরুরি। কারণ, ডেটা আসলে নরমাল কি না, সেটার ওপর ভিত্তি করেই আমাদের পরবর্তী অনেক পরিসংখ্যানিক সিদ্ধান্ত নিতে হয়। মনে রাখবি, একটা নিখুঁত নরমাল ডিস্ট্রিবিউশনের স্কিউনেস সবসময় শূন্য হয়, মানে সে ডান বা বাম কোনো দিকেই হেলে থাকে না। একইভাবে কার্টোসিসেরও একটা নির্দিষ্ট আদর্শ মাপ থাকে। মূলত এই স্কিউনেস আর কার্টোসিসের মান হিসাব করেই গবেষকেরা নিশ্চিত হন যে, তাদের ডেটা স্বাভাবিক বা নরমাল প্যাটার্নে আছে, নাকি তাতে কোনো বড় ধরনের অস্বাভাবিকতা লুকিয়ে আছে।”</p>
+<p id="p48">শেষে আবির কিছুটা গম্ভীর হয়ে বলল, “আর ঠিক এই কারণেই শুধুমাত্র গাণিতিক গড় দেখে চট করে কোনো সিদ্ধান্ত নেওয়াটা অনেক বড় একটা বোকামি। কোনো ডেটা নিয়ে কাজ করার আগে প্রথমেই দেখতে হবে ডেটার ডিস্ট্রিবিউশন বা আকারটা আসলে কেমন। এটা কি নরমাল? নাকি কোনো একদিকে স্কিউড হয়ে আছে? নাকি চূড়াটা খুব বেশি খাড়া বা চ্যাপ্টা? ডেটার এই আসল চেহারাটা না বুঝে সামনে আগানো ঠিক না।”</p>
+<p id="p49">লেকের পাড়ে বসে তিনজন বিশ্রাম নিচ্ছিল। সূর্য এখন ঠিক মাথার ওপরে, কড়া রোদ চারদিকে ছড়িয়ে পড়েছে।</p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-06.html"><span>Previous chapter</span><b>একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</b></a><a class="pg next" href="ch-08.html"><span>Next chapter</span><b>অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

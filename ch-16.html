@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>গাণিতিক ছকে জীবনের সমীকরণ | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="গাণিতিক ছকে জীবনের সমীকরণ | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html" aria-current="page">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-16.html">
+<article>
+<h1 class="chapter-title">গাণিতিক ছকে জীবনের সমীকরণ</h1>
+<p class="meta">9 min read</p>
+
+<div class="prose">
+
+<p id="p1">সকাল বেলা। সেন্ট মার্টিন থেকে বিদায় নেওয়ার সময় ঘনিয়ে এসেছে। তিন বন্ধু হোটেলের রুমে নিজেদের ব্যাগ গোছাচ্ছে।</p>
+<p id="p2">ফারহান কাল রাতে সৈকতের ধারের বাজার থেকে একটা টি শার্ট কিনেছিল। সেটা গায়ে দিয়ে সে আয়নার সামনে দাঁড়িয়ে বিরক্ত মুখে বলল, “কী মুশকিল! টি শার্টটা কিনলাম, কিন্তু ফিটিং তো একদমই ভালো হলো না। কাঁধের কাছে ঝুলে আছে, পেটের কাছে আবার বেশি চাপা।”</p>
+<p id="p3">আবির নিজের ব্যাগের চেইন আটকাতে আটকাতে হেসে উঠল। “তোর এই টি শার্টের ফিটিংয়ের মতোই ডেটা এনালাইসিসের পর মডেলের অবস্থাও অনেক সময় এমন বেঢপ হয়ে যায়। আর মডেলটা আসলে বাস্তবের সাথে কতটা ফিট করেছে বা মানানসই হয়েছে, তা বোঝার জন্য আমরা ব্যবহার করি Model fit statistics।”</p>
+<p id="p4">সাব্বির তোয়ালে ভাঁজ করতে করতে জিজ্ঞেস করল, “মডেল ফিট করা মানে কী? মডেল কি কোনো জামাকাপড় নাকি?”</p>
+<p id="p5">আবির বিছানায় বসে বোঝাতে শুরু করল, “সহজ কথায় বলতে গেলে Model fit statistics হলো এমন কিছু গাণিতিক মাপকাঠি, যা আমাদের বলে দেয় যে আমাদের তৈরি করা মডেলটি বাস্তবের ডেটার সাথে কতটা নিখুঁতভাবে মিলে যাচ্ছে। বিষয়টা ঠিক তোর দর্জির কাছে গিয়ে মাপ দিয়ে শার্ট বানানোর মতো। শার্ট তৈরি হওয়ার পর তুই যখন গায়ে দিস, তখন বুঝতে পারিস সেটা তোর গায়ে ফিট হয়েছে কি না। শার্ট খুব ঢিলা বা খুব চাপা হওয়ার মানে হলো ফিটিং ভালো হয়নি। ডেটা এনালাইসিসের ক্ষেত্রেও বিষয়টা ঠিক এমনই। আমরা ডেটা দিয়ে যে মডেলটি তৈরি করি, সেটি বাস্তবের ফলাফলগুলোকে কতটা নিখুঁতভাবে প্রেডিক্ট করতে পারছে, তা যাচাই করার উপায়ই হলো এই Model fit statistics।”</p>
+<p id="p6">ফারহান আয়নার সামনে থেকে সরে এসে খাটের ওপর বসল। “তাহলে এই ফিটিং মাপার ফিতা বা মাপকাঠিগুলো কী কী?”</p>
+<p id="p7">“মডেল কতটা ফিট সেটা যাচাই করার জন্য অনেক রকমের ইন্ডিকেটর আছে,” আবির বলল। “তবে সব মডেলে সব ইন্ডিকেটর কাজে লাগে না। মডেলের ধরন অনুযায়ী আমাদের মাপার ফিতাও বদলে যায়। শুরুতেই ধরা যাক তোর গতকালের সেই Linear Regression এর কথা।”</p>
+<p id="p8">সে একটু গুছিয়ে নিয়ে বলল, “মনে কর তুই বের করতে চাইছিস একজন শিক্ষার্থীর পড়াশোনার সময় এবং ক্লাসে উপস্থিতির হারের ওপর তার সিজিপিএ কীভাবে নির্ভর করে। এই মডেলে তুই প্রথমেই যেটা দেখবি, তা হলো R square। এই মানটা তোকে বলবে তোর ইন্ডিপেন্ডেন্ট ভ্যারিয়েবলগুলো, অর্থাৎ পড়াশোনার সময় ও উপস্থিতি মিলে শিক্ষার্থীর সিজিপিএ এর ঠিক কতটুকু পরিবর্তন বা কারণ ব্যাখ্যা করতে পারছে। তোর মডেলে যদি R square এর মান ০.৭০ আসে, তার মানে হলো সিজিপিএ এর ৭০ শতাংশ পরিবর্তন তুই পড়াশোনা ও উপস্থিতির সময় দিয়ে ব্যাখ্যা করতে পেরেছিস। বাকি ৩০ শতাংশ হয়তো তার মেধা, পরীক্ষার দিনের মানসিক অবস্থা বা অন্য কোনো অজানা কারণের ওপর নির্ভর করছে, যেগুলো তুই মডেলে আনিসনি।”</p>
+<p id="p9">ফারহান মাথা নেড়ে বলল, “দারুণ তো! তাহলে R square এর মান যত বেশি, মডেল তত ভালো?”</p>
+<p id="p10">“তত্ত্বগতভাবে হ্যাঁ, কিন্তু এখানেই একটা ফাঁদ আছে,” আবির সতর্ক করে দিল। “শুধু R square দেখলেই হবে না, তোকে Adjusted R square এর দিকেও তাকাতে হবে। কারণ মডেলে তুই যত খুশি ভ্যারিয়েবল যোগ করবি, গাণিতিক কারণে R square এর মান এমনিতেই কিছুটা বেড়ে যাবে। ধর তুই শিক্ষার্থীর পড়াশোনার সময়ের সাথে তার জুতার সাইজও মডেলে ঢুকিয়ে দিলি! জুতার সাইজ তো আর সিজিপিএ তে কোনো প্রভাব ফেলে না, তাই এই অপ্রয়োজনীয় ভ্যারিয়েবল যোগ করলে Adjusted R square বৃদ্ধি না পেয়ে উল্টো কমে যাবে। এটা হলো মডেলের একটা ফিল্টার, যা শুধু কাজের ভ্যারিয়েবলগুলোকেই দাম দেয়।”</p>
+<p id="p11">সাব্বির জিজ্ঞেস করল, “আর ভুল ধরার কোনো উপায় নেই?”</p>
+<p id="p12">“অবশ্যই আছে,” আবির বলল। “এরপরে আসে RMSE বা Root Mean Squared Error। এটা হলো তোর মডেল যে সিজিপিএ প্রেডিক্ট করেছে আর ওই শিক্ষার্থীর আসল সিজিপিএ, এই দুটোর মধ্যে গড়ে কতটা দূরত্ব বা ভুল আছে। এই মান যত কম হবে, তোর প্রেডিকশন তত নিখুঁত বলে ধরা হবে। এছাড়া লিনিয়ার রিগ্রেশনের ক্ষেত্রে সবচেয়ে গুরুত্বপূর্ণ অথচ সবচেয়ে অবহেলিত বিষয় হলো Residual Plot। রেসিডিউয়াল মানে হলো আসল সিজিপিএ থেকে প্রেডিক্ট করা সিজিপিএ এর বিয়োগফল। তুই যদি এগুলো নিয়ে একটা গ্রাফ আঁকিস আর দেখিস বিন্দুগুলো একদম এলোমেলোভাবে ছড়িয়ে আছে, তাহলে বুঝবি মডেল একদম পারফেক্ট। কিন্তু যদি দেখিস সেখানে সুন্দর একটা প্যাটার্ন বা নকশা তৈরি হয়েছে, তাহলে বুঝতে হবে তোর মডেলে গুরুত্বপূর্ণ কোনো ভ্যারিয়েবল বাদ পড়েছে।”</p>
+<p id="p13">ফারহান ঘাড় চুলকে বলল, “আচ্ছা, লিনিয়ার তো বুঝলাম। কিন্তু যদি মডেলটা লজিস্টিক রিগ্রেশন হয়? মানে আউটকাম যদি শুধু পাস বা ফেল হয়? সেখানে তো সিজিপিএ এর মতো কন্টিনিউয়াস নাম্বার নেই।”</p>
+<p id="p14">আবির হাসল। “গুড পয়েন্ট! লজিস্টিক মডেলে লিনিয়ার রিগ্রেশনের মতো সরাসরি R square পাওয়া যায় না। এর পরিবর্তে আমরা McFadden’s বা Nagelkerke এর মতো Pseudo R square ব্যবহার করি। এগুলো দিয়ে হুবহু ভ্যারিয়েশন ব্যাখ্যা করা না গেলেও, দুটো ভিন্ন মডেলের মধ্যে তুলনা করতে এগুলো দারুণ কাজ করে। McFadden’s R square এর মান ০.২ থেকে ০.৪ এর মধ্যে থাকলে ধরে নেওয়া হয় মডেলটা বেশ ভালো ফিট করেছে।”</p>
+<p id="p15">সে ফারহানের দিকে তাকিয়ে একটু সিরিয়াস গলায় বলল, “তবে লজিস্টিক মডেলে তোকে সবচেয়ে বেশি খেয়াল রাখতে হবে Hosmer Lemeshow Test এর দিকে। অন্যান্য টেস্টে p-value কম হলে আমরা যেমন খুশিতে লাফিয়ে উঠি, এখানে ব্যাপারটা ঠিক উল্টো। এই টেস্টে p-value যদি ০.০৫ এর বেশি হয়, তবেই কেবল মডেলটির ফিট ভালো ধরা হয়। p-value ছোট হওয়ার মানে হলো তোর মডেল আর বাস্তব ডেটার মধ্যে বড় কোনো গন্ডগোল আছে।”</p>
+<p id="p16">“আর কোনো উপায় আছে লজিস্টিক যাচাই করার?” সাব্বির জানতে চাইল।</p>
+<p id="p17">“হ্যাঁ, এর পাশাপাশি তোকে Confusion matrix দেখতে হবে,” আবির বলল। “এটা একটা চমৎকার টেবিল বা ছক। এটা দেখায় তোর মডেল কতজনকে সঠিকভাবে পাস বলে প্রেডিক্ট করেছিল এবং বাস্তবেও তারা পাস করেছে, আর কতজনকে ফেল বলেছিল এবং বাস্তবেও তারা ফেল করেছে। এখান থেকে তুই তোর মডেলের Accuracy বা নির্ভুলতা খুব সহজেই বুঝতে পারবি।”</p>
+<p id="p18">ফারহান বলল, “আর যদি লজিস্টিকের বদলে Probit মডেল ব্যবহার করি?”</p>
+<p id="p19">“সেক্ষেত্রে চিত্রটা প্রায় একই রকমই থাকবে,” আবির উত্তর দিল। “কারণ প্রোবিট মডেলও পাস ফেল বা হ্যাঁ না জাতীয় ডেটা নিয়েই কাজ করে। তবে এখানে মডেল যাচাইয়ের জন্য Log likelihood এবং Likelihood Ratio Test বা LR Test এর ওপর বেশি ফোকাস করা হয়। Log likelihood তোকে বলবে ডেটার সাথে মডেলটা কতটা সামঞ্জস্যপূর্ণ। এই মানটি সাধারণত নেগেটিভ হয়, আর এটি শূন্যের যত কাছাকাছি থাকবে, মডেল তত ভালো বলে ধরে নেওয়া হয়।”</p>
+<p id="p20">সে একটু সহজ করে বোঝাল, “অন্যদিকে LR Test হলো একটা তুলনামূলক পরীক্ষা। ধর তুই একটা Null Model বানালি, যেখানে পড়াশোনার সময় বা উপস্থিতির মতো কোনো ভ্যারিয়েবলই নেই। মডেল শুধু চোখ বন্ধ করে আন্দাজে পাস ফেল প্রেডিক্ট করছে। LR Test তোর বানানো আসল মডেলটাকে এই অন্ধ Null Model এর সাথে তুলনা করে। এর মান সিগনিফিকেন্ট হওয়ার মানে হলো তোর বানানো মডেলটা ওই অন্ধ মডেলের চেয়ে অনেক অনেক গুণ ভালো কাজ করছে।”</p>
+<p id="p21">“আর কাল রাতে যে Tobit মডেলের কথা বললি, সেটার ফিটিং বুঝব কীভাবে?” সাব্বির প্রশ্ন করল।</p>
+<p id="p22">“টোবিট মডেলের ক্ষেত্রেও আমরা আগের মতো Log likelihood এবং LR test দেখে থাকি। পাশাপাশি Pseudo R square ও দেখা হয়,” আবির বলল। “তবে টোবিটের একটা স্পেশাল দিক আছে। ধর ক্লাসে একটা খুব কঠিন পরীক্ষা হয়েছে। নিয়ম হলো কেউ ৪০ এর নিচে পেলে তার মার্কস খাতায় ০ হিসেবে লেখা হবে। পরীক্ষা এতই কঠিন ছিল যে ক্লাসের অর্ধেকের বেশি শিক্ষার্থী ৪০ এর নিচে পেয়েছে, তাই তোর ডেটাসেটের অনেকগুলো মার্কস ০ তে আটকে আছে, অর্থাৎ সেন্সরড হয়ে আছে। টোবিট মডেল ঠিকমতো কাজ করছে কি না তা বোঝার জন্য তোর মডেল যেসব মার্কস প্রেডিক্ট করেছে তার ডিস্ট্রিবিউশন আর শিক্ষার্থীদের আসল মার্কসের ডিস্ট্রিবিউশন পাশাপাশি রেখে তুলনা করতে হয়। এই দুটো ডিস্ট্রিবিউশনের চেহারা যদি কাছাকাছি হয়, তাহলে তুই নিশ্চিন্ত হতে পারিস যে তোর মডেল একদম ফিট।”</p>
+<p id="p23">ব্যাগ গোছানো প্রায় শেষ। আবির তার ল্যাপটপ ব্যাগে ঢোকানোর আগে একটা কাগজের টুকরোতে দ্রুত একটা ছক এঁকে ফারহানের দিকে বাড়িয়ে দিল। “নে, মডেল ফিটিংয়ের এই চার্টটা পকেটে রেখে দে। থিসিসের সময় খুব কাজে লাগবে।”</p>
+<div class="table-wrap" tabindex="0"><table>
+
+<thead>
+<tr class="header">
+<th>রিগ্রেশন মডেল</th>
+<th>মডেল ফিট যাচাই করার প্রধান মাপকাঠি (Statistics)</th>
+<th>ভালো ফিটিংয়ের লক্ষণ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Linear Regression</td>
+<td>R square, Adjusted R square</td>
+<td>মান যত বেশি (১ এর কাছাকাছি), মডেল তত ভালো।</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>RMSE (Root Mean Squared Error)</td>
+<td>মান যত কম হবে, প্রেডিকশন তত নিখুঁত।</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Residual Plot</td>
+<td>বিন্দুগুলো এলোমেলো বা র‍্যান্ডম হতে হবে, কোনো প্যাটার্ন থাকবে না।</td>
+</tr>
+<tr class="even">
+<td>Logistic Regression</td>
+<td>Pseudo R square (McFadden’s)</td>
+<td>মান ০.২ থেকে ০.৪ এর মধ্যে থাকলে বেশ ভালো ফিট।</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Hosmer Lemeshow Test</td>
+<td>p-value অবশ্যই ০.০৫ এর চেয়ে বড় হতে হবে।</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Confusion Matrix</td>
+<td>সঠিকভাবে প্রেডিক্ট করা পজিটিভ ও নেগেটিভের হার বেশি হতে হবে।</td>
+</tr>
+<tr class="odd">
+<td>Probit Model</td>
+<td>Log likelihood</td>
+<td>মান নেগেটিভ হয়, তবে শূন্যের যত কাছাকাছি থাকবে তত ভালো।</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Likelihood Ratio (LR) Test</td>
+<td>Null Model এর তুলনায় p-value সিগনিফিকেন্ট (ছোট) হতে হবে।</td>
+</tr>
+<tr class="odd">
+<td>Tobit Model</td>
+<td>LR Test, Pseudo R square</td>
+<td>অন্যান্য মডেলের মতোই সিগনিফিকেন্ট হতে হবে।</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Distribution Comparison</td>
+<td>প্রেডিক্ট করা ডেটা এবং আসল ডেটার ডিস্ট্রিবিউশনের চেহারা কাছাকাছি হতে হবে।</td>
+</tr>
+</tbody>
+</table></div>
+<p id="p24">কাগজটা পকেটে রেখে ফারহান হাসল। আবির কাঁধে ব্যাগ তুলে নিয়ে বলল, “সবশেষে একটা কথা মাথায় রাখবি। ডেটা এনালাইসিসের ক্ষেত্রে কোনো একটা নির্দিষ্ট সংখ্যা দিয়ে মডেলের মান বিচার করা ঠিক নয়। R square অনেক বেশি মানেই যে মডেল খুব ভালো, বিষয়টা মোটেও এমন নয়। তোকে সব সময় কয়েকটা ইন্ডিকেটর একসাথে দেখতে হবে। তোর পাওয়া পরিসংখ্যানগুলো তোর গবেষণার মূল থিওরির সাথে কতটা মিলছে, দিনশেষে তার ওপর ভিত্তি করেই চূড়ান্ত সিদ্ধান্ত নিতে হবে। একটা ভালো মডেল শুধু গাণিতিকভাবে ফিট হলেই হয় না, বাস্তবের লজিকের সাথেও তাকে ফিট হতে হয়।”</p>
+<p id="p25">তিন বন্ধু হোটেল রুম থেকে বেরিয়ে জেটির দিকে পা বাড়াল। সেন্ট মার্টিনের এই ট্রিপটা তাদের শুধু আনন্দই দেয়নি, ডেটা আর বাস্তবতার এক নতুন দুনিয়ার সাথেও পরিচয় করিয়ে দিয়েছে।</p>
+
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-15.html"><span>Previous chapter</span><b>সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</b></a><a class="pg next" href="ch-17.html"><span>Next chapter</span><b>শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

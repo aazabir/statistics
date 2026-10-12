@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>দুইয়ের অধিকের গল্প (ANOVA) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="দুইয়ের অধিকের গল্প (ANOVA) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html" aria-current="page">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-25.html">
+<article>
+<h1 class="chapter-title">দুইয়ের অধিকের গল্প (ANOVA)</h1>
+<p class="meta">6 min read</p>
+
+<div class="prose">
+
+<p id="p1">পরদিন সকাল ১০টা। আবির, সাব্বির আর ফারহান ল্যাবে বসে আছে। থিসিস জমা দেওয়ার সময় ঘনিয়ে আসছে। গতকালের t-test এর সফলতার পর আজ তাদের আত্মবিশ্বাস তুঙ্গে।</p>
+<p id="p2">সাব্বির ল্যাপটপ খুলে বলল, “দোস্ত, কাল তো আমরা পাবলিক আর প্রাইভেট এই ২টা গ্রুপ তুলনা করলাম। কিন্তু গতকাল যে বললাম আমাদের ডেটায় আরেকটা গুরুত্বপূর্ণ জিনিস আছে, সেটা হলো ফ্যাকাল্টি বা অনুষদ।”</p>
+<p id="p3">ফারহান বলল, “হ্যাঁ! আমাদের ৩০০ জন ছাত্রের মধ্যে তিন ধরণের ছাত্র আছে। সায়েন্স, আর্টস আর বিজনেস। আমি দেখতে চাই, এই তিন গ্রুপের মধ্যে কারা অনলাইন শপিংয়ে বেশি টাকা ওড়ায়। আমার বাজি হলো বিজনেস ফ্যাকাল্টির ওপর।”</p>
+<p id="p4">সাব্বির উৎসাহ নিয়ে বলল, “এটা তো সহজ! কালকের মতো t-test করব। প্রথমে সায়েন্স বনাম আর্টস। তারপর আর্টস বনাম বিজনেস। আর শেষে সায়েন্স বনাম বিজনেস। মোট তিনবার t-test করলেই তো সব রেজাল্ট বেরিয়ে আসবে!”</p>
+<p id="p5">আবির সাথে সাথে ল্যাপটপের ঢাকনাটা একটু নামিয়ে দিয়ে বলল, “সাব্বির, থাম! আমি গতকালই বলেছি যে ওটা হলো পরিসংখ্যানের দুনিয়ায় অন্যতম বড় ভুল। যখন তোর হাতে দুইয়ের বেশি গ্রুপ থাকে, যেমন এখানে ৩টা গ্রুপ, তখন বারবার t-test করা একদম নিষেধ।”</p>
+<p id="p6">সাব্বির অবাক হয়ে বলল, “কেন? করলে সমস্যা কী?”</p>
+<p id="p7">আবির বোঝানো শুরু করল, “সমস্যাটা হলো ভুল হওয়ার ঝুঁকি বা Error Rate বেড়ে যাওয়া। সহজ করে বলি, ধর তুই একটা লটারি কিনলি। জেতার চান্স অনেক কম। কিন্তু তুই যদি একসাথে ১০টা লটারি কিনিস, তাহলে কি জেতার চান্স বেড়ে যায় না? পরিসংখ্যানে আমরা ভুল রেজাল্ট আসাটাকে লটারির মতো মনে করি। তুই যতবার আলাদা আলাদা টেস্ট করবি, ভুল রেজাল্ট আসার সম্ভাবনা তত বেড়ে যাবে। তাই ৩ বার t-test না করে, আমাদের এমন একজনকে ডাকতে হবে যে একসাথে সবাইকে বিচার করতে পারে। অর্থাৎ সবার কথা একসাথে শুনতে পারে।”</p>
+<p id="p8">ফারহান জিজ্ঞেস করল, “সেটা আবার কে?”</p>
+<p id="p9">আবির হাসল। “সে হলো গড়ের বড় ভাই ANOVA। এর পুরো নাম Analysis of Variance।”</p>
+<p id="p10">আবির সফটওয়্যারে ডেটা সেট করতে করতে বলল, “ANOVA এর কাজ করার স্টাইলটা অনেকটা রেডিওর সিগন্যাল ডিটেক্টরের মতো। সে মূলত দুইটা জিনিস মাপে। সিগন্যাল বা Signal আর নয়েজ বা Noise।”</p>
+<p id="p11">ফারহান ভুরু কুঁচকে বলল, “স্ট্যাটিস্টিকসে আবার সিগন্যাল আর নয়েজ এল কোত্থেকে?”</p>
+<p id="p12">আবির বলল, “খুব সোজা করে বলি শোন। প্রথমে ANOVA মাপে সিগন্যাল বা আসল পার্থক্য। অর্থাৎ সায়েন্স, আর্টস আর বিজনেসের ছাত্রদের গড় খরচের মধ্যে আসলেই কতটা তফাত আছে। এটা হলো গ্রুপগুলোর মাঝখানের পার্থক্য।”</p>
+<p id="p13">“এরপর সে মাপে নয়েজ বা ভেতরের এলোমেলো অবস্থা। অর্থাৎ, শুধু সায়েন্সের বা শুধু বিজনেসের ছাত্রদের নিজেদের মধ্যেই খরচের পার্থক্য কতটুকু? কারণ সায়েন্সের সবাই তো আর সমান খরচ করে না। কেউ হয়তো মাসে ৫০০০ টাকার শপিং করে, আবার কেউ ৫০০ টাকার। একই গ্রুপের ভেতরের এই যে ব্যক্তিগত বা এলোমেলো পার্থক্য, এটাই হলো নয়েজ।”</p>
+<p id="p14">একটু থেমে আবির স্ক্রিনের দিকে তাকিয়ে বলল, “এখন ANOVA এই দুটোর তুলনা করে। যদি সে দেখে যে, গ্রুপের ভেতরের ওই এলোমেলো নয়েজের চেয়ে তিন গ্রুপের মাঝখানের আসল সিগন্যাল অনেক বেশি জোরালো, কেবল তখনই সে রায় দেয় যে, হ্যাঁ এই তিনটি ফ্যাকাল্টির ছাত্রদের খরচের ধরনে আসলেই উল্লেখযোগ্য পার্থক্য আছে।”</p>
+<p id="p15">আবির এন্টার বাটন চাপল। স্ক্রিনে রেজাল্ট ভেসে উঠল। F-value ৬.৭৮ এবং p-value ০.০০২, যা ০.০৫ এর চেয়ে ছোট।</p>
+<p id="p16">আবির হাসল। “রেজাল্ট সিগনিফিক্যান্ট! তার মানে আমাদের সায়েন্স, আর্টস আর বিজনেসের ছাত্রদের খরচের গড় সমান নয়। কোথাও না কোথাও বড় পার্থক্য আছে।”</p>
+<p id="p17">ফারহান রেজাল্ট দেখে বলল, “বুঝলাম পার্থক্য আছে। কিন্তু কে বেশি খরচ করে? সায়েন্স নাকি বিজনেস নাকি আর্টস? ANOVA তো সেটা বলল না। সে শুধু বলল পার্থক্য আছে।”</p>
+<p id="p18">আবির বলল, “ঠিক ধরেছিস। ANOVA হলো বাড়ির এমন এক দারোয়ানের মতো, যে বাঁশি বাজিয়ে বলে বাড়িতে চোর ঢুকেছে! কিন্তু চোরটা কে, সেটা সে আঙুল দিয়ে দেখায় না। চোর ধরার জন্য আমাদের এর পরে আরেকটা স্পেশাল টেস্ট করতে হয়, একে বলে Post-hoc Test। এগুলোর মধ্যে সবচেয়ে জনপ্রিয় হলো Tukey’s Test।”</p>
+<p id="p19">আবির সফটওয়্যারে Post-hoc অপশন চালু করল। এবার একটা বিস্তারিত টেবিল এল। সেখানে দেখা গেল:</p>
+<ul>
+<li><p id="p20">সায়েন্স বনাম আর্টস: কোনো পার্থক্য নেই। (দুজনই গরিব!)</p></li>
+<li><p id="p21">আর্টস বনাম বিজনেস: পার্থক্য অনেক বেশি।</p></li>
+<li><p id="p22">সায়েন্স বনাম বিজনেস: পার্থক্য অনেক বেশি।</p></li>
+</ul>
+<p id="p23">আবির বলল, “পেয়ে গেছি! আসল ঘটনা হলো বিজনেসের ছাত্ররা সায়েন্স এবং আর্টস উভয়ের চেয়ে বেশি খরচ করে। কিন্তু সায়েন্স আর আর্টসের ছাত্রদের খরচের মধ্যে তেমন কোনো পার্থক্য নেই।”</p>
+<p id="p24">কাজ শেষ করে বের হওয়ার সময় সাব্বির বলল, “আচ্ছা আবির, আমরা আলাদাভাবে ফ্যাকাল্টি দেখলাম। আবার কাল দেখেছিলাম ছেলে ও মেয়ে। কিন্তু আমার মনে হয়, খরচটা আসলে এই দুইটার কম্বিনেশনের ওপর নির্ভর করে।”</p>
+<p id="p25">ফারহান বলল, “মানে?”</p>
+<p id="p26">সাব্বির বলল, “মানে হলো, হতে পারে বিজনেসের ছেলেরা অনেক খরচ করে, কিন্তু বিজনেসের মেয়েরা হয়তো কিপটা। আমরা কি একসাথে ডিপার্টমেন্ট আর লিঙ্গ দুইটার প্রভাব দেখতে পারি না?”</p>
+<p id="p27">আবির বলল, “অবশ্যই পারি। যখন আমরা এক সাথে দুইটা ফ্যাক্টর বা কারণ দিয়ে কোনো কিছু বিচার করি, যেমন এখানে ডিপার্টমেন্ট এবং লিঙ্গ দিয়ে খরচ বিচার করছি, তখন তাকে বলে Two-way ANOVA।”</p>
+<p id="p28">সে আরও বুঝিয়ে বলল, “এটা আমাদের তিনটা প্রশ্নের উত্তর দেয়। এক, ডিপার্টমেন্টের প্রভাব, মানে কোন ডিপার্টমেন্ট বেশি খরচ করে? দুই, লিঙ্গের প্রভাব, মানে ছেলে না মেয়ে কারা বেশি খরচ করে? তিন, ইন্টারঅ্যাকশন বা Interaction, মানে ডিপার্টমেন্ট আর লিঙ্গ মিলে কি কোনো জগাখিচুড়ি পাকায়?”</p>
+<p id="p29">“যদি দেখি সায়েন্সের ছেলেরা কম খরচ করে, কিন্তু বিজনেসের ছেলেরা ধুমিয়ে খরচ করে, তাহলে আমাদের বুঝতে হবে ছেলেদের খরচটা আসলে ডিপার্টমেন্টের ওপর নির্ভর করছে। এটাই ইন্টারঅ্যাকশন।”</p>
+<p id="p30">ল্যাব থেকে বের হওয়ার আগে আবির বলল, “শোন, থিসিস ডিফেন্সে স্যাররা কনফিউজড করার চেষ্টা করবে। তাই এই নোটটা মনে রাখবি:”</p>
+<div class="table-wrap" tabindex="0"><table>
+
+<thead>
+<tr class="header">
+<th><strong>পরিস্থিতি (Scenario)</strong></th>
+<th><strong>টেস্টের নাম</strong></th>
+<th><strong>কেন করব?</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>৩ বা তার বেশি গ্রুপ (যেমন গ্রুপ A বনাম B বনাম C)</td>
+<td>One-way ANOVA</td>
+<td>বারবার t-test করলে ভুল হওয়ার ঝুঁকি বাড়ে, তাই একসাথে সব গ্রুপ মাপতে।</td>
+</tr>
+<tr class="even">
+<td>ANOVA সিগনিফিক্যান্ট হলে ঠিক কে আলাদা তা জানতে</td>
+<td>Post-hoc Test (Tukey)</td>
+<td>ANOVA চোর ধরে না, শুধু সংকেত দেয়। এই টেস্ট চোরকে বা আলাদা গ্রুপকে চিহ্নিত করে।</td>
+</tr>
+<tr class="odd">
+<td>২টা আলাদা ফ্যাক্টর একসাথে দেখতে (যেমন ফ্যাকাল্টি এবং জেন্ডার)</td>
+<td>Two-way ANOVA</td>
+<td>যখন আমরা দেখতে চাই দুইটা কারণ মিলে কীভাবে ফলাফলকে প্রভাবিত করে।</td>
+</tr>
+</tbody>
+</table></div>
+<p id="p31">ফারহান বলল, “বস! এখন আর টেনশন নেই। ৩ গ্রুপ দেখলেই চোখ বন্ধ করে ANOVA!”</p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-24.html"><span>Previous chapter</span><b>গড়ের লড়াই: কে এগিয়ে? (The t-tests)</b></a><a class="pg next" href="ch-26.html"><span>Next chapter</span><b>ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

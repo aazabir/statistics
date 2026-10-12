@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html" aria-current="page">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-03.html">
+<article>
+<h1 class="chapter-title">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</h1>
+<p class="meta">6 min read</p>
+
+<div class="prose">
+
+<p id="p1">রাঙ্গামাটিতে যখন বাসটা এসে থামল, তখন বিকেল গড়িয়ে সন্ধ্যা নামছে। বাস থেকে নামতেই ঠান্ডা বাতাস এসে গায়ে লাগল। আবির বুক ভরে শ্বাস নিল। ঢাকার সেই ধুলোবালি মেশানো ভারী বাতাস এখানে নেই। এখানকার বাতাসটা কেমন যেন হালকা, সতেজ।</p>
+<p id="p2">এই যে সে বাতাসটা অনুভব করল, বাসের হর্নের বদলে ঝিঁঝিঁ পোকার শব্দ শুনল, এটাই হলো পরিসংখ্যানের প্রথম ধাপ। কোনো কিছু দেখা, শোনা বা অনুভব করা এবং সেটা নোট করে রাখার নাম Observation।</p>
+<p id="p3">সাব্বির আর ফারহান আগের থেকে সেখানে উপস্থিত ছিল। হাঁটতে হাঁটতে তারা হোটেলের দিকে এগোলো। চারপাশে পর্যটকদের ভিড়। কেউ সেলফি তুলছে, কেউ রাস্তার পাশে পিঠা খাচ্ছে, কেউ বা দলবেঁধে গান গাইছে। আবির খেয়াল করল, একই জায়গায় থেকেও একেকজন মানুষ একেক রকম আচরণ করছে। এই প্রতিটা আলাদা আলাদা আচরণই একেকটা অবজারভেশন (Observation)। তবে পরিসংখ্যানের ভাষায় Observation মানে শুধু কিছু দেখা না। বরং কোনো ব্যক্তি বা ঘটনার সম্পর্কে নির্দিষ্ট তথ্য যেটা সংগ্রহ ও রেকর্ড করা যায়।</p>
+<p id="p4">হোটেলে চেক-ইন করে রুমে ঢুকতেই ফারহান ধপাস করে বিছানায় গা এলিয়ে দিল। “ভাই, আমি শেষ! এখন খাবার ছাড়া আমি একচুল নড়ব না।”</p>
+<p id="p5">সাব্বির তার ব্যাগটা গুছিয়ে রাখতে রাখতে বলল, “খাবার পরে। আগে পকেট থেকে মোবাইল বের কর। হিসাবটা এখন না করলে পরে সব গুলিয়ে যাবে।”</p>
+<p id="p6">আবির জানত, এই পার্টটা এড়ানো যাবে না। সাব্বির শুরু করল জেরা। “ট্রেনের টিকেট কে কিনেছিল?” ফারহান হাত তুলে বলল, “আমি। ৩০০০ টাকা।” “নাস্তা?” আবির বলল, “আমি দিয়েছি। ৫০০ টাকা।” “আর অটোভাড়া?” সাব্বির নিজেই বলল, “ওটা আমি দিয়েছিলাম, ২০০ টাকা।”</p>
+<p id="p7">আবির খেয়াল করল, সাব্বির যখনই কোনো খরচ বা টাকার অঙ্ক লিখছে, একেকজনের নামের পাশে একেক রকম সংখ্যা বসছে। ফারহানের ঘরে ৩০০০, আবিরের ঘরে ৫০০, সাব্বিরের ঘরে ২০০। এই যে “খরচ” একই ধরনের জিনিস হলেও, কার কত খরচ হয়েছে সেটা আলাদা। এই পরিবর্তনশীল বৈশিষ্ট্যটাই হলো ভ্যারিয়েবল (Variable)। সোজা কথায়, যার মান স্থির থাকে না, পরিস্থিতি অনুযায়ী ভ্যারি (Vary) করে, সেটাই ভেরিয়েবল। আবার যদি আমরা ২০ জন মানুষের থেকে বয়সের তথ্য নিই, তাহলে এখানে “বয়স” হলো ভ্যারিয়েবল। কারণ মানুষভেদে বয়স ভ্যারি করছে।</p>
+<p id="p8">এখানেই একটা গুরুত্বপূর্ণ জিনিস ঘটে। এই যে আলাদা আলাদা তথ্যযেমন কে কত টাকা দিল, কখন দিল, কার খরচ কত, এই প্রতিটা তথ্যকেই বলা হয় Data। অর্থাৎ, অবজারভেশন থেকে যে নির্দিষ্ট তথ্য আমরা পাই, সেটাই হলো Data।</p>
+<p id="p9">সাব্বির যখন এই সব খরচ, নাম, আর সময়ের হিসাব একজায়গা করে তার মোবাইলের স্ক্রিনে সাজাল, তখন আবির বলল, “দেখ সাব্বির, তুই কিন্তু এখন একটা ডেটাসেট (Dataset) বানিয়ে ফেললি।” সাব্বির তাকাল। “মানে?” আবির বুঝিয়ে বলল, “এই যে আমাদের তিনজনের নাম, কে কত দিল, কখন দিল এই সব বিক্ষিপ্ত অবজারভেশন যখন তুই একটা টেবিলে বা ফাইলে সাজিয়ে ফেললি, তখন এই পুরো কালেকশনটার নাম হয়ে গেল ডেটাসেট।”</p>
+<p id="p10">“আর আমরা তিনজন?” ফারহান পাশ ফিরল। “আমরা তিনজন হলাম এই ডেটাসেটের একেকটা Case। প্রতিটা মানুষ বা ঘটনা, যাদের বা যেসব ইউনিট থেকে তথ্য নেওয়া হচ্ছে (যেমন ব্যক্তি, পরিবার বা ঘটনা) প্রতিটাই একেকটা Case।”</p>
+<p id="p11">হঠাৎ সাব্বির ভ্রু কুঁচকে বলল, “টার্মিনালে নেমে যে চিপস আর পানি কিনলাম ১০০ টাকার, ওটা কে দিয়েছে?” তিনজনই একে অপরের দিকে তাকাল। কারোরই মনে নেই। কেউ একজন দিয়েছে নিশ্চয়ই, কিন্তু কে দিয়েছে সেটা আর মনে করা যাচ্ছে না। আবির হাসল। “অভিনন্দন! আমাদের ডেটাসেটে এখন Missing Data ঢুকে গেছে। অনেক সময় তথ্য থাকলেও ভুলে যাওয়া বা না লেখার কারণে ডেটা মিসিং হয়ে যায়। আমাদের ক্ষেত্রেও এমন ঘটনা ঘটেছে. টাকা খরচ হয়েছে, কিন্তু রেকর্ডে সেটা নেই। আমাদের রিয়েল লাইফ ডেটাতে এই মিসিং ডেটাই সবচেয়ে বেশি প্যারা দেয়।”</p>
+<p id="p12">সমস্যা মেটাতে আবির আর সাব্বির আবার চেক করতে লাগল। হঠাৎ আবিরের চোখে পড়ল একটা অদ্ভুত জিনিস। সবার খরচ মোটামুটি ৫০০ থেকে ৩০০০ টাকার মধ্যে। কিন্তু সাব্বিরের নামের পাশে একটা বিশাল অঙ্ক লেখা ১২,০০০ টাকা! আবির চোখ বড় বড় করে বলল, “কিরে! তুই কি একাই হোটেল কিনে ফেলেছিস নাকি?” সাব্বির হেসে বলল, “আরে না গাধা! ঢাকা থেকে আসার আগে আমরা তিনজন যে কেনাকাটা করলাম, সেটার সব খরচ তো আমার পকেট থেকেই গেছে।”</p>
+<p id="p13">আবির বলল, “এই যে সবার খরচ এক রকম, আর সাব্বিরের খরচটা হুট করে অনেক বেশি। পরিসংখ্যানে একে বলে আউটলায়ার (Outlier)।” আউটলায়ার হলো সেই ডেটা পয়েন্ট, যেটা ডেটাসেটের বাকি সবার চেয়ে আলাদা। অনেক সময় এই আউটলায়ারের কারণেই পুরো গড় হিসাব ওলট-পালট হয়ে যায়। আউটলায়ার কখনো খুব বেশি বড় মান হয়, আবার কখনো খুব ছোট মান হয়। সহজ কথায় আউটলায়ার হলো এমন একটি মান যা ডেটাসেটের বাকি মানগুলোর তুলনায় অস্বাভাবিকভাবে বেশি বা কম।</p>
+<p id="p14">হিসাব শেষে তারা হোটেলের বারান্দায় এসে দাঁড়াল। নিচে রাস্তা দিয়ে শত শত পর্যটক হেঁটে যাচ্ছে। আবির নিচের ভিড়টা দেখিয়ে বলল, “একটা জিনিস ভাব। আজ রাঙ্গামাটিতে হয়তো পাঁচ হাজার পর্যটক এসেছে। পরিসংখ্যানের ভাষায় এই পুরো পাঁচ হাজার পর্যটক হলো পপুলেশন (Population)।”</p>
+<p id="p15">ফারহান বলল, “আচ্ছা আবির, এই পাঁচ হাজার পর্যটকের প্রত্যেকের খরচ কেমন হতে পারে? আমাদের মতোই কি হবে?” আবির বললো, “আমাদের পক্ষে সবার খরচ হিসাব করা সম্ভব না। আবার আমরা কিন্তু আমাদের তিনজনের হিসাব জানি। এখন আমরা যদি দেখতে চাই আমাদের খরচ বাকিদের খরচের সমান বা কাছাকাছি কি না, তাহলে সবার কাছ থেকে খরচের হিসাব নিতে হবে। কিন্তু পরিসংখ্যান আমাদের জন্য এই কাজটা সহজ করে দিয়েছে। এই বিশাল পপুলেশন থেকে আমরা যদি ছোট্ট একটা অংশের (ধর সেটা ৫০ জন) তথ্য নিয়ে কাজ করি, তাহলে এই ছোট অংশটা হবে স্যাম্পল (Sample)।”</p>
+<p id="p16">সাব্বির বলল, “আর আমরা যেহেতু ৫০ জন থেকে তথ্য নিচ্ছি, তাই স্যাম্পল সাইজ (Sample Size) হবে ৫০।” আবির মাথা নেড়ে বলল, “ঠিক তাই। কোনো ব্যক্তি বা প্রতিষ্ঠান যখন কোনো সার্ভে করে, তারা পুরো দেশের মানুষের কাছে যায় না। তারা একটা স্যাম্পল (representative subset of population) নেয়, তারপর সেই ছোট স্যাম্পলের রেজাল্ট দিয়ে পুরো পপুলেশন সম্পর্কে একটা ধারণা করে।”</p>
+<p id="p17">ফারহান হাই তুলল। “ভাই, তোর স্যাম্পল সাইজ আর পপুলেশন থাকুক। আমার পেটের পপুলেশন এখন বিদ্রোহ করছে। চল খেতে যাই।”</p>
+<p id="p18">তিনজন হেসে রুম থেকে বের হলো। আবির মনে মনে ভাবল, জীবনটা আসলে একটা বিশাল ডেটাসেট। এখানে ভ্যারিয়েবল আছে, মিসিং ডেটা আছে, আবার হুট করে আসা আউটলায়ারও আছে। এই এলোমেলো সংখ্যাগুলো সাজাতে পারলেই আসল গল্পটা পড়া যায়।</p>
+<p id="p19"><strong><br />
+</strong></p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-02.html"><span>Previous chapter</span><b>একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</b></a><a class="pg next" href="ch-04.html"><span>Next chapter</span><b>নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html" aria-current="page">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-09.html">
+<article>
+<h1 class="chapter-title">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</h1>
+<p class="meta">6 min read</p>
+
+<div class="prose">
+
+<p id="p1">সকালে রাঙ্গামাটির বাজারটা বেশ জমজমাট। পাহাড়ি ফল, জুমের সবজি, আর কাপ্তাই লেকের তাজা মাছ, সব মিলিয়ে এক এলাহি কারবার। আবির, সাব্বির আর ফারহান বাজারের ভেতর দিয়ে হাঁটছিল। বাতাসে কাঁচা হলুদ আর পাহাড়ি মশলার গন্ধ।</p>
+<p id="p2">ফারহান একটা ফলের দোকানের সামনে দাঁড়িয়ে বলল, “দোস্ত, রাঙ্গামাটির বাজারটা তো সেই! সব জিনিসের দাম বেশ কম, আর কোয়ালিটিও ভালো।”</p>
+<p id="p3">সাব্বির হেসে বলল, “মামা, তুই দোকান দেখলি মাত্র দুইটা। আর রায় দিয়ে দিলি পুরো বাজার ভালো? বাকি দোকান না দেখেই?”</p>
+<p id="p4">আবির একটু হেসে থেমে দাঁড়াল। “সাব্বির কিন্তু লজিক্যাল কথাই বলেছে। তুই যে মাত্র দুই-একটা দোকান দেখেই পুরো বাজার সম্পর্কে ধারণা দিয়ে দিলি, পরিসংখ্যানে এই কাজটাকেই বলে Sampling। তবে তোর এই স্যাম্পলিংটা পুরোপুরি আদর্শ হয়নি, কারণ তুই যে গুটিকয়েক দোকান ঘুরে দেখেছিস, সেগুলো পুরো বাজারের সঠিক প্রতিনিধিত্ব (represent) করে না।”</p>
+<p id="p5">ফারহান একটু অবাক হয়ে চোখ কুঁচকাল। “মানে? আমি আবার স্যাম্পলিং কখন করলাম? আর প্রতিনিধিত্বই বা করল না কেন?”</p>
+<p id="p6">আবির ওর কাঁধে হাত রেখে বোঝানোর ভঙ্গিতে বলল, “দেখ, এই পুরো বাজারে হয়তো ১০০-এর বেশি দোকান আছে। এই যে পুরো সেট, অর্থাৎ বাজারের সবগুলো দোকান। পরিসংখ্যানের ভাষায় এটাই হলো Population<strong>।</strong> এখন আমাদের তিনজনের পক্ষে কি সকাল সকাল ১০০ দোকান ঘুরে ঘুরে দাম চেক করা সম্ভব? একদম না। তাই আমরা নিজেদের অজান্তেই কিছু দোকান বেছে নিই, আর সেই ছোট অংশটা দেখে পুরো বাজার সম্পর্কে একটা ধারণা করার চেষ্টা করি। এই যে ছোট অংশটা আমরা বেছে নিলাম, এটাই হলো Sample বা নমুনা। আর এই বেছে নেওয়ার পুরো প্রক্রিয়াটাই হলো Sampling।”</p>
+<p id="p7">সে একটু হেসে যোগ করল, “স্যাম্পলিং কিন্তু খারাপ কিছু না, বরং বেশ বুদ্ধিমানের কাজ। ধর, হাঁড়িতে ভাত হয়ে গেছে কি না, সেটা বোঝার জন্য কেউ কি পুরো হাঁড়ির সব ভাত চেক করে? না। ওপর থেকে এক-দুটো ভাত টিপেই সিদ্ধান্ত নিয়ে নেয়।”</p>
+<p id="p8">ফারহান মাথা চুলকে বলল, “তাহলে একটু আগে যে বললি আমার দেখা দোকানগুলো পুরো বাজারকে প্রতিনিধিত্ব করছে না, সমস্যাটা কোথায় হলো? আমি তো ঠিক কাজটাই করেছি।”</p>
+<p id="p9">আবির বলল, “সমস্যা হলো, তুই হাঁড়ির কোন জায়গা থেকে ভাতটা তুললি, তার ওপর। যদি হাঁড়ির এমন এক পাশ থেকে ভাত তুলিস যেখানে তাপ পৌঁছায়নি, তাহলে পুরো হাঁড়ির অবস্থা সম্পর্কে তোর ভুল ধারণা হবে। তাই sample কীভাবে নেওয়া হচ্ছে এটাই হলো সবচেয়ে ক্রিটিক্যাল বিষয়।”</p>
+<p id="p10">সে একটু সিরিয়াস হয়ে বলল, “যদি আমরা এমনভাবে দোকান বাছাই করি যাতে বাজারের প্রতিটা দোকানের সিলেক্ট হওয়ার সমান সুযোগ থাকে, এবং আমাদের বাছাইটা পুরোপুরি পক্ষপাতমুক্ত হয়, তাহলে সেটাকে বলে Random Sampling। এতে সাধারণত ভুলের মাত্রা বা bias কম থাকে।”</p>
+<p id="p11">ফারহান একটু অস্বস্তি নিয়ে এদিক-ওদিক তাকাল। “কিন্তু... আমি তো শুধু রাস্তার ধারের বড় আর সুন্দর করে সাজানো দোকানগুলোই দেখেছি।”</p>
+<p id="p12">আবির বলল, “ঠিক এখানেই গণ্ডগোলটা পাকিয়েছিস তুই! তুই অবচেতনভাবেই শুধু নির্দিষ্ট এক ধরনের দোকান বেছে নিয়েছিস। এতে তোর নেওয়া sample পুরো বাজারকে ঠিকভাবে represent করছে না। বড় দোকানের ফলের মান আর দাম দিয়ে তুই ভেতরের ছোট বা অস্থায়ী দোকানগুলোর অবস্থা বুঝতে পারবি না। পরিসংখ্যানে এটাকেই বলে Sampling Bias।”</p>
+<p id="p13">সে আরেকটু ভেঙে বলল, “Sampling Bias মানে হলো এমনভাবে sample নেওয়া, যেখানে কিছু নির্দিষ্ট বৈশিষ্ট্যের দোকান বেশি প্রাধান্য পায়, আর অন্যগুলো একেবারেই বাদ পড়ে যায়। তুই বড় দোকান দেখেছিস, ছোট দোকানগুলো বাদ পড়েছে। এটা এক ধরনের Selection Bias, যা মূল sampling bias-এরই একটা বড় উদাহরণ।”</p>
+<p id="p14">হাঁটতে হাঁটতে তারা বাজারের আরেকটু ভেতরে ঢুকল।</p>
+<p id="p15">আবির আবার বলল, “আরেকটা ব্যাপার চিন্তা কর। আমরা এখন একদম সকালে এসেছি। সকালে সব জিনিসপত্র ফ্রেশ থাকে, বিক্রেতাদের মেজাজও ভালো থাকে। কিন্তু বিকেলে হয়তো ভিড় বাড়ে, ভালো জিনিস ফুরিয়ে যায়, মান বদলায়। আমরা যেহেতু শুধু সকালের বাজারটা দেখেছি, তাই পুরো দিনের বেচাকেনার আসল ছবিটা কিন্তু আমরা পাইনি। এটাও এক ধরনের bias। কারণ আমাদের sample পুরো সময়টাকে কভার করছে না।”</p>
+<p id="p16">সাব্বির চিন্তিত মুখে মাথা নেড়ে বলল, “বুঝতে পেরেছি। তার মানে sample যদি biased হয়, তাহলে এর ওপর ভিত্তি করে আমরা যে সিদ্ধান্ত নেব, সেটাও ভুল হবে।”</p>
+<p id="p17">“একদম ১০০ ভাগ সত্যি,” আবির সায় দিল। “একটা ভালো sample-এর সবচেয়ে বড় গুণ হলো Representativeness বা প্রতিনিধিত্বশীলতা। মানে, sample যেন একটা আয়নার মতো কাজ করে, যা যতটা সম্ভব পুরো population-এর বৈচিত্র্যকে নিখুঁতভাবে প্রতিফলিত করবে।”</p>
+<p id="p18">বাজার পেরিয়ে তারা তিনজন লেকের ধারের একটা নিরিবিলি জায়গায় চলে এল। স্নিগ্ধ বাতাস বইছে।</p>
+<p id="p19">আবির একটু গম্ভীর হয়ে বলল, “এবার একটু অ্যাডভান্সড কিছু ভাবা যাক। ধর, আমরা তিনজন আলাদা আলাদাভাবে sample নিলাম। আমি আমার মতো করে ১০টা দোকান ঘুরলাম, তুই ১০টা, আর সাব্বির ১০টা। আমাদের তিনজনের হিসাব করা ফলের গড় দাম কি হুবহু এক হবে?”</p>
+<p id="p20">ফারহান একটু ভেবে বলল, “না, একটু-আধটু পার্থক্য তো হবেই। তুই হয়তো যে দোকানগুলো দেখেছিস, আমি সেগুলো দেখিনি।”</p>
+<p id="p21">“পারফেক্ট!” আবির হাসল। “একই population থেকে বারবার একই সাইজের sample নিলে, প্রতিবার আমরা যে আলাদা আলাদা sample mean (গড়) পাই, সেগুলো সব একসাথে মিলে একটা চমৎকার distribution বা বিন্যাস তৈরি করে। পরিসংখ্যানের ভাষায় একেই বলে Sampling Distribution।”</p>
+<p id="p22">সাব্বির লেকের জলে একটা পাথর ছুঁড়ে মেরে বলল, “তার মানে দাঁড়াচ্ছে, কোনো sample-ই আসলে পুরোপুরি নিখুঁত না?”</p>
+<p id="p23">আবির মাথা নেড়ে বলল, “না, কোনো কিছুই শতভাগ নিখুঁত হয় না। প্রতিটা sample-এই একটু না একটু variation বা ভিন্নতা থাকেই। আর এই variation ঠিক কতটা তা গাণিতিকভাবে মাপার একটা দারুণ উপায় হলো Standard Error।”</p>
+<p id="p24">সে আরও সহজ করে বুঝিয়ে বলল, “Standard Error আমাদের বলে দেয় যদি আমরা বারবার sample নিই, তাহলে আমাদের sample mean কতটা এদিক-ওদিক হতে পারে। এটা আসলে আমাদের হিসাব করা estimate-এর অনিশ্চয়তার একটা পরিমাপ।”</p>
+<p id="p25">সাব্বির উৎসাহ নিয়ে জিজ্ঞেস করল, “মানে, আমরা যদি ২টার বদলে ২০টা দোকান ঘুরতাম, অর্থাৎ sample size বড় করতাম, তাহলে কি এই অনিশ্চয়তা কমে যেত?”</p>
+<p id="p26">“একদম তাই!” আবির বলল। “Sample size যত বড় হবে, Standard Error তত কমবে। তার মানে তোর estimate বা ধারণা তত বেশি নির্ভরযোগ্য হবে।”</p>
+<p id="p27">দূরে একটা ইঞ্জিনচালিত বোট ভটভট শব্দ করে জলের বুকে সাদা ফেনা তুলে এগিয়ে গেল। বোটের ঢেউগুলো আস্তে আস্তে এসে পাড়ে আছড়ে পড়ছে।</p>
+<p id="p28">আবির একটু চুপ করে থেকে, লেকের অসীম জলরাশির দিকে তাকিয়ে বলল, “সবচেয়ে মজার ব্যাপার কী জানিস? আমরা আমাদের দৈনন্দিন জীবনে প্রতিদিনই, প্রতি মুহূর্তে sampling করি। কারও সাথে মাত্র ৫ মিনিট কথা বলেই তার পুরো ব্যক্তিত্ব সম্পর্কে ধারণা করে নিই, ইউটিউবে ২ মিনিটের একটা ট্রেলার দেখেই আড়াই ঘণ্টার সিনেমা বিচার করে ফেলি।”</p>
+<p id="p29">সে ফারহানের দিকে তাকিয়ে হেসে বলল, “সমস্যা আসলে sampling-এ না। সমস্যা শুরু হয় তখনই, যখন আমরা biased sampling করে ফেলি।”</p>
+<p id="p30">শেষে সে একটা গভীর শ্বাস নিয়ে বলল, “তাই অল্প কিছু দেখে সিদ্ধান্ত নেওয়াটা মোটেও খারাপ কিছু না। কিন্তু সিদ্ধান্ত নেওয়ার আগে নিজের কাছে অন্তত একবার এই প্রশ্নটা রাখা উচিত, ‘আমি যতটুকু দেখলাম বা জানলাম, সেটা কি সত্যিই পুরো ছবির প্রতিনিধিত্ব করে?’ যদি মন বলে ‘হ্যাঁ’, ঠিক তখনই চূড়ান্ত সিদ্ধান্ত নেওয়া উচিত।”</p>
+<p id="p31">কথাগুলো বাতাসে মিলিয়ে যাওয়ার পর তিনজনেই বেশ কিছুক্ষণ চুপচাপ বসে লেকের নীল জলের দিকে তাকিয়ে রইল।</p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-08.html"><span>Previous chapter</span><b>অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</b></a><a class="pg next" href="ch-10.html"><span>Next chapter</span><b>প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

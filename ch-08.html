@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html" aria-current="page">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-08.html">
+<article>
+<h1 class="chapter-title">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</h1>
+<p class="meta">8 min read</p>
+
+<div class="prose">
+
+<p id="p1">রাতের দিকে রাঙ্গামাটির আকাশটা হঠাৎ করেই রূপ বদলাতে শুরু করল। সন্ধ্যার সময় আকাশ একদম পরিষ্কার ছিল, তারারা মিটমিট করছিল। কিন্তু এখন পাহাড়ের ওপর দিয়ে বেশ ঠান্ডা বাতাস বইছে। দূরে কোথাও বিদ্যুৎ চমকাচ্ছে।</p>
+<p id="p2">আবির জানালার পাশে দাঁড়িয়ে বাইরের এই আলো আঁধারির খেলা দেখছিল। প্রকৃতি যেন কিছু একটার অপেক্ষা করছে। কিছু একটা ঘটার আগে থমকে থাকা একটা অদ্ভুত মুহূর্ত।</p>
+<p id="p3">ফারহান পাশে এসে দাঁড়াল। “কিরে, আবহাওয়া তো সুবিধের মনে হচ্ছে না। কাল কি বৃষ্টি হবে?”</p>
+<p id="p4">আবির একটু ভেবে বলল, “হতে পারে।”</p>
+<p id="p5">ফারহান হেসে বলল, “এই ‘হতে পারে’ কথাটাই সবচেয়ে ঝামেলার। হবে অথবা হবে না, মাঝামাঝি কেন বলছিস?”</p>
+<p id="p6">সাব্বির বিছানায় শুয়ে ছিল, সে সেখান থেকেই বলে উঠল, “কারণ আমরা ভবিষ্যৎ নিশ্চিতভাবে জানি না। তাই মাঝামাঝি কথা বলতে হয়।”</p>
+<p id="p7">আবির মাথা নেড়ে বলল, “ঠিক বলেছিস। আর পরিসংখ্যানের একটা অনেক বড় ও মজার ধারণার শুরুই হয় মানুষের এই ‘না জানার’ জায়গা থেকে। একেই বলে Probability বা সম্ভাবনা।”</p>
+<p id="p8">আবির একটু ধীরে, বুঝিয়ে বলতে শুরু করল, “Probability মানে কিন্তু ভবিষ্যৎ নিশ্চিত করে বলে দেওয়া বা জ্যোতিষগিরি করা না। বরং কোনো ঘটনা ঘটার সম্ভাবনা ঠিক কতটা, তার একটা গাণিতিক পরিমাপ বের করা। এই সম্ভাবনার মান সবসময় ০ থেকে ১ এর মধ্যে থাকে। ০ মানে হলো ঘটনাটা ঘটার কোনো সম্ভাবনাই নেই বা সেটি সম্পূর্ণ অসম্ভব। আর ১ মানে হলো ঘটনাটা শতভাগ নিশ্চিত ঘটবে। আর এই ০ এবং ১ এর মাঝামাঝি যেকোনো মান হলো আমাদের অনিশ্চয়তার মাত্রা বা আমরা কতটা নিশ্চিত নই তার হিসাব।”</p>
+<p id="p9">ফারহান জানালা দিয়ে বাইরে তাকিয়ে বলল, “কিন্তু এখন তো আকাশের সবকিছু একদম এলোমেলো লাগছে। ঝড় হবে কি না, কেউ জানে না। এই ব্যাপারে তোর পরিসংখ্যান কী বলে?”</p>
+<p id="p10">আবির মুচকি হাসল। “প্রকৃতির এই এলোমেলো লাগাটাকেই পরিসংখ্যানে বলে Randomness বা র‍্যান্ডমনেস। Random মানে কিন্তু অর্থহীন কোনো বিশৃঙ্খলা না। এর মানে হলো, একটা নির্দিষ্ট ঘটনায় ঠিক কী ফলাফল আসবে, সেটা তুই আগে থেকে নিশ্চিত করে বলতে পারবি না। কিন্তু একই ঘটনা যদি বারবার ঘটতে থাকে, তখন একটা পরিষ্কার গাণিতিক প্যাটার্ন বা নকশা চোখে পড়ে। যেমন, তুই একটা কয়েন টস করলে হেড আসবে নাকি টেল আসবে সেটা পুরোপুরি র‍্যান্ডম, তুই নিশ্চিত করে বলতে পারবি না। কিন্তু তুই যদি ওই কয়েনটাই ১০০০ বার টস করিস, তাহলে তুই গাণিতিকভাবে জানিস যে প্রায় ৫০০ বার হেড আসবেই।”</p>
+<p id="p11">সাব্বির উঠে বসল। “তাহলে কাল বৃষ্টি হওয়াটাও কি একটা র‍্যান্ডম ব্যাপার?”</p>
+<p id="p12">“একদম তাই,” আবির বলল। “কালকের আবহাওয়ায় যা যা ঘটতে পারে, তার প্রত্যেকটিকে পরিসংখ্যানে বলে এক একটি Outcome বা ফলাফল। যেমন, বৃষ্টি হওয়া একটা Outcome, আবার রোদ ওঠা আরেকটা Outcome। আর আমাদের আগ্রহের বিষয় যদি শুধু নির্দিষ্ট করে বৃষ্টি নিয়ে হয়, তবে সেটাকে আমরা বলি Event।”</p>
+<p id="p13">সাব্বির একটু ভ্রু কুঁচকে বলল, “বিষয়টা আরেকটু ক্লিয়ার কর। Outcome আর Event এই দুটোর মধ্যে আসল পার্থক্যটা কী? দুটো তো শুনতে প্রায় একই রকম মনে হচ্ছে।”</p>
+<p id="p14">আবির একটু হেসে বলল, “খুব সুন্দর প্রশ্ন! অনেকেই এই দুটো কনসেপ্টকে এক ভেবে গুলিয়ে ফেলে। শোন, ধর কালকের আবহাওয়ার দিকে আমরা নজর রাখছি। কালকের দিনে আকাশ কী কী রূপ দেখাতে পারে? ১. ঝকঝকে রোদ উঠতে পারে। ২. আকাশ মেঘলা থাকতে পারে। ৩. ঝিরঝিরে বৃষ্টি হতে পারে। ৪. আবার কালবৈশাখী ঝড়ও হতে পারে। এই যে আলাদা আলাদা, একেবারে মূল বা একক সম্ভাব্য রূপগুলো, এর প্রত্যেকটা হলো এক একটা Outcome বা ফলাফল।”</p>
+<p id="p15">ফারহান মাথা নেড়ে বলল, “বুঝলাম। মানে যা যা ঘটা সম্ভব, তার প্রতিটা সিঙ্গেল আইটেমই হলো Outcome। তাহলে Event জিনিসটা কী?”</p>
+<p id="p16">আবির বুঝিয়ে বলল, “Event হলো আমাদের ‘আগ্রহের জায়গা’ বা আমাদের নিজেদের ঠিক করে দেওয়া কোনো শর্ত। এটা শুধু একটা Outcome নিয়েও তৈরি হতে পারে, আবার একসাথে কয়েকটা Outcome মিলেও তৈরি হতে পারে। ধর, কাল আমরা লেকে নৌকা নিয়ে ঘুরতে যাব। আমাদের একমাত্র চাওয়া হলো আকাশ থেকে যেন পানি না পড়ে। তাহলে আমাদের কাঙ্ক্ষিত Event বা শর্ত হলো: 'শুকনো আবহাওয়া'। এখন একটু খেয়াল করে দেখ, এই 'শুকনো আবহাওয়া' Event টার ভেতরে কিন্তু দুটো আলাদা Outcome ঢুকে আছে। ‘ঝকঝকে রোদ’ উঠলেও আমাদের ইভেন্ট সফল, আবার ‘মেঘলা আকাশ’ থাকলেও আমাদের ইভেন্ট সফল! অর্থাৎ, রোদ আর মেঘলা, এই দুটো আলাদা Outcome মিলে আমাদের একটি নির্দিষ্ট Event তৈরি হলো।”</p>
+<p id="p17">আবির বিষয়টা আরও সহজ করার জন্য পকেট থেকে লুডুর ছক্কাটা আবার বের করল।</p>
+<p id="p18">“এই ছক্কাটার কথাই ভাব। তুই যখন ছক্কাটা ছুঁড়িস, তখন ১ থেকে ৬ পর্যন্ত প্রতিটি সংখ্যা হলো এক একটি আলাদা Outcome। কিন্তু তুই যদি বলিস, ‘লুডুতে আমার গুটি পাকার ঘরে নেওয়ার জন্য বিজোড় সংখ্যা দরকার’, তাহলে এই ‘বিজোড় সংখ্যা আসাটা’ হলো তোর কাঙ্ক্ষিত Event। আর এই Event টার ভেতরে তিনটা আলাদা Outcome লুকিয়ে আছে, সেগুলো হলো ১, ৩ এবং ৫।”</p>
+<p id="p19">সাব্বির এবার তুড়ি বাজিয়ে বলল, “ওহ, এবার একদম ক্লিয়ার! তার মানে, Outcome হলো প্রকৃতির দেওয়া একেকটা কাঁচামাল, আর Event হলো সেই কাঁচামালগুলো দিয়ে আমার দরকার মতো বা শর্ত মতো বানানো একটা প্যাকেজ!”</p>
+<p id="p20">“একদম পারফেক্ট বলেছিস!” আবির হাসিমুখে সায় দিল। “পরিসংখ্যানে আমরা মূলত এই Event ঘটার সম্ভাবনাই বা Probability হিসাব করি। কারণ আমাদের মূল আগ্রহ কোনো একটা বিচ্ছিন্ন ফলাফলে থাকে না, বরং আমাদের দেওয়া শর্ত বা টার্গেট পূরণ হচ্ছে কি না, সেটাতেই আমাদের আসল ফোকাস থাকে।”</p>
+<p id="p21">ফারহান একটু কনফিউজড হয়ে বলল, “আচ্ছা বুঝলাম। কিন্তু পরিসংখ্যানে এসব বৃষ্টি বা রোদ শব্দগুলো নিয়ে তো আর গাণিতিক হিসাব নিকাশ করা যায় না। সেক্ষেত্রে আমরা কী করি?”</p>
+<p id="p22">“দারুণ পয়েন্ট ধরেছিস!” আবির বলল। “পরিসংখ্যানবিদরা তো আর বৃষ্টি বা রোদ শব্দগুলোকে যোগ বিয়োগ বা গুণ ভাগ করতে পারে না। তাই বাস্তব ঘটনাগুলোকে তাদের সংখ্যায় রূপান্তর করতে হয়। আর ঠিক এই কাজটাই করে Random Variable বা র‍্যান্ডম ভ্যারিয়েবল।”</p>
+<p id="p23">আবির আরেকটু ভেঙে বুঝিয়ে বলল, “Random Variable হলো এমন একটা ভ্যারিয়েবল বা চলক, যার মান আগে থেকে নির্দিষ্ট থাকে না। এটা পুরোপুরি নির্ভর করে ঘটনার ফলাফল বা Outcome এর ওপর। ধর, কালকের আবহাওয়ার ওপর আমাদের নৌকা ভাড়ার লাভ ক্ষতি নির্ভর করছে। আমরা সমীকরণের জন্য ধরে নিলাম, X হলো আমাদের নৌকা ভাড়ার আর্থিক লাভ বা ক্ষতি। এখানে কালকের দিনটা না আসা পর্যন্ত আমরা X এর মান নিশ্চিত করে জানি না। তাই এই X ই হলো আমাদের Random Variable।”</p>
+<p id="p24">হঠাৎ জানালার কাঁচে ঝুপঝাপ বৃষ্টির ফোঁটা পড়তে শুরু করল।</p>
+<p id="p25">ফারহান চিন্তিত মুখে বলল, “এই রে! শুরু হয়ে গেল! তাহলে কাল কী করব? ১০০০ টাকা দিয়ে যে নৌকা ভাড়া করার কথা ভাবছিলাম, সেটা কি ক্যানসেল করব?”</p>
+<p id="p26">আবির হেসে বলল, “ঠিক এই কনফিউশন বা দ্বিধার জায়গাতেই Random Variable আর Probability একসাথে মিলে তৈরি করে সিদ্ধান্ত নেওয়ার সেরা হাতিয়ার। পরিসংখ্যানে যেটাকে বলা হয় Expected Value বা প্রত্যাশিত মান।”</p>
+<p id="p27">ফারহান ভ্রু কুঁচকে বলল, “সেটা আবার কীভাবে কাজে লাগাব?”</p>
+<p id="p28">আবির খুব সহজ করে ব্যাখ্যা করল, “তুই এখন তোর Random Variable (X) এর সম্ভাব্য মানগুলোর সাথে তাদের ঘটার সম্ভাবনা বা Probability গুণ করে একটা গড় হিসাব বের করবি। ধর, আবহাওয়া রিপোর্ট অনুযায়ী কাল বৃষ্টি হওয়ার সম্ভাবনা ৭০ শতাংশ বা ০.৭০। বৃষ্টি হলে আমাদের নৌকাভাড়ার ১০০০ টাকা পুরোপুরি লস। অর্থাৎ, এখানে Random Variable বা X এর মান হলো মাইনাস ১০০০। আর বৃষ্টি না হওয়ার সম্ভাবনা ৩০ শতাংশ বা ০.৩০। বৃষ্টি না হলে নৌকায় ঘুরে তোর দারুণ মজা হবে, তোর কাছে এই আনন্দের মান ধরলাম ২০০০ টাকা লাভ। অর্থাৎ, এখানে X এর মান হলো প্লাস ২০০০। এখন এই সম্ভাবনা অনুযায়ী গড় হিসাব করলেই Expected Value পাওয়া যায়।”</p>
+<p id="p29">আবির হিসাবটা বলে দিল, “প্রথমে মাইনাস ১০০০ কে ০.৭০ দিয়ে গুণ, যার মান আসে মাইনাস ৭০০। এরপর প্লাস ২০০০ কে ০.৩০ দিয়ে গুণ, যার মান আসে প্লাস ৬০০। দুটো যোগ করলে আমাদের Expected Value দাঁড়ায় মাইনাস ১০০।”</p>
+<p id="p30">আবির ফারহানের চোখের দিকে তাকিয়ে বলল, “দেখ, তোর Expected Value নেগেটিভ বা মাইনাস ১০০ আসছে। এর মানে হলো, তুই যদি এমন অনিশ্চিত পরিস্থিতিতে নৌকা ভাড়া করিস, তবে গাণিতিকভাবে গড়ে তোর লস হওয়ার সম্ভাবনাই বেশি।”</p>
+<p id="p31">বাইরে বৃষ্টির বেগ ঝুম থেকে আবার একটু কমে এলো।</p>
+<p id="p32">আবির জানালার বাইরে সেই আলো আঁধারির দিকে তাকিয়ে একটা দীর্ঘশ্বাস ফেলে বলল, “Expected Value নিশ্চিত করে বলে না যে কাল ঠিক কী ঘটবে। হয়তো কাল সকালে একদম কড়া রোদ উঠবে আর আমরা না যাওয়ার কারণে আফসোস করব। কিন্তু জীবনটা তো পুরোপুরি নিশ্চিত না, আবার পুরোপুরি এলোমেলোও না। আর এই ধূসর পৃথিবীতে অনিশ্চয়তার মধ্যে দাঁড়িয়ে যুক্তিসঙ্গত ও সেরা সিদ্ধান্ত নেওয়ার পথটাই আমাদের গাণিতিকভাবে দেখিয়ে দেয় Expected Value।”</p>
+<p id="p33"><strong><br />
+</strong></p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-07.html"><span>Previous chapter</span><b>ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</b></a><a class="pg next" href="ch-09.html"><span>Next chapter</span><b>অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

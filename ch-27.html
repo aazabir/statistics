@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>হ্যাঁ নাকি না? (Binary Logistic Regression) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="হ্যাঁ নাকি না? (Binary Logistic Regression) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html" aria-current="page">হ্যাঁ নাকি না? (Binary Logistic Regression)</a><ul class="toc-sub"><li><a href="#s0">১. লিনিয়ার বনাম লজিস্টিক: ফ্যানের রেগুলেটর বনাম সুইচ</a></li><li><a href="#s1">২. আমাদের থিসিস: অনলাইন শপিং করবে কি করবে না?</a></li><li><a href="#s2">৩. অডস রেশিও (Odds Ratio)</a></li><li><a href="#s3">৪. শুধু হ্যাঁ বা না নয়, অপশন যদি ৩টা হয়? (Multinomial Logistic Regression)</a></li><li><a href="#s4">৫. যখন অপশনগুলোতে ছোট বড় বা র‍্যাঙ্ক থাকে (Ordinal Logistic Regression)</a></li></ul></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-27.html">
+<article>
+<h1 class="chapter-title">হ্যাঁ নাকি না? (Binary Logistic Regression)</h1>
+<p class="meta">10 min read</p>
+
+<div class="prose">
+
+<p id="p1">বিকেল বেলা। ক্যাম্পাসের লেকের পাড়ে তিন বন্ধু বসে আছে। সামনে বাদাম আর চানাচুর, কিন্তু তাদের আলোচনা থিসিস নিয়ে।</p>
+<p id="p2">ফারহান বেশ উত্তেজিত। সে ল্যাপটপ খুলে বলল, “দোস্ত, কাল তো আমরা শিখলাম কীভাবে Linear Regression দিয়ে ভবিষ্যৎবাণী করা যায়। যেমন, কার পকেট মানি কত হলে সে কত টাকার শপিং করবে। আজ আমি একটা নতুন জিনিস ট্রাই করলাম।”</p>
+<p id="p3">সাব্বির মুখে বাদাম পুরতে পুরতে বলল, “কী জিনিস?”</p>
+<p id="p4">ফারহান বলল, “আমি দেখতে চেয়েছি সিজিপিএ বা CGPA দিয়ে কি বলা যায় যে কেউ চাকরি পাবে কি না? আমি লিনিয়ার রিগ্রেশন রান করেছিলাম। কিন্তু রেজাল্ট দেখে মাথা ঘুরে গেছে।”</p>
+<p id="p5">সে স্ক্রিনটা ঘুরিয়ে দেখাল। সেখানে সে একবার Job Prediction পেয়েছে ১.৫ আর অন্যবার পেয়েছে মাইনাস ০.২। ফারহান হতাশ হয়ে বলল, “এর মানে কী? চাকরি পাওয়া মানে তো হ্যাঁ অথবা না। এখানে ১.৫ বা মাইনাস ০.২ আসার মানে কী? কেউ কি দেড়টা চাকরি পায়? নাকি মাইনাস চাকরি পায়?”</p>
+<p id="p6">আবির হেসে বলল, “ফারহান, তুই ভুল টুল দিয়ে সঠিক কাজ করতে চাচ্ছিস। তুই যেটা করছিস, সেটা হলো স্কেল দিয়ে ওজন মাপার চেষ্টা। Linear Regression কাজ করে পরিমাপযোগ্য সংখ্যা নিয়ে, যেমন বেতন, বয়স বা পরীক্ষার নম্বর। কিন্তু তোর প্রশ্ন হলো চাকরি পাবে কি না, মানে Yes নাকি No। এটা একটা ক্যাটাগরি। ডিপেন্ডেন্ট ভ্যারিয়েবল ক্যাটাগরিক্যাল হলে লিনিয়ার রিগ্রেশন ফেল করবে।”</p>
+<p id="p7">সাব্বির জিজ্ঞেস করল, “কেন ফেল করবে?”</p>
+<h3 id="s0">১. লিনিয়ার বনাম লজিস্টিক: ফ্যানের রেগুলেটর বনাম সুইচ</h3>
+<p id="p8">আবির বলল, “পার্থক্যটা খুব সহজে বোঝা যায়। Linear Regression হলো ফ্যানের রেগুলেটরের মতো। তুই ঘোরাবি, ফ্যানের স্পিড ১, ২, ৩, ৪ করে বাড়বে বা কমবে। স্পিড যেকোনো সংখ্যা হতে পারে। অন্যদিকে Logistic Regression হলো লাইটের সুইচের মতো। হয় ON বা 1, না হয় OFF বা 0। এর মাঝামাঝি কিছু নেই। তুই সুইচ অর্ধেক টিপে রাখতে পারবি না। চাকরি পাওয়ার ক্ষেত্রেও তাই, চাকরি পেলি মানে ১ বা Success, আর পেলি না মানে ০ বা Failure।”</p>
+<p id="p9">আবির একটা কাঠি দিয়ে মাটিতে একটা সোজা লাইন টেনে বোঝাল। “এইটা হলো লিনিয়ার রিগ্রেশন। এটা ধরে নেয় কারণ বা X একটু বাড়লে ফলাফল বা Y ঠিক সোজা লাইনে বাড়বে বা কমবে। কিন্তু সমস্যা শুরু হয় তখনই, যখন আমরা এই Y কে সম্ভাবনা হিসেবে ধরে নিতে চাই।”</p>
+<p id="p10">সে কাঠি দিয়ে লাইনের এক প্রান্তে ইশারা করে বলল, “এই সোজা লাইনটা ওপরের দিকে ১ এর বেশি বা নিচের দিকে ০ এর কম চলে যেতে পারে। অংকের দিক থেকে এটা ঠিকই, কিন্তু বাস্তবের দিক থেকে অসম্ভব। কারণ সম্ভাবনা কখনো ১০০% এর বেশি বা ০% এর কম হয় না।”</p>
+<p id="p11">তারপর আবির পাশে আরেকটা গ্রাফ আঁকল। এটা সোজা লাইন নয়, বরং মাঝখানে খাড়া আর দুই পাশে ধীরে ধীরে সমান হয়ে যাওয়া একটা ইংরেজি S আকৃতি।</p>
+<p id="p12">“এইটাই Logistic Regression,” সে বলল। “এটা ভেতরে ভেতরে হিসাবটা লিনিয়ার ভাবেই করে, কিন্তু শেষে একটা বিশেষ গাণিতিক ফাংশন ব্যবহার করে, যাকে বলে Sigmoid Curve। এই কার্ভ বা S আকৃতির কাজ একটাই, যে মানই আসুক, তাকে জোর করে ০ আর ১ এর ভেতরে আটকে রাখা।”</p>
+<p id="p13">আবির একটু থেমে যোগ করল, “এই কারণেই Logistic Regression সম্ভাবনা নিয়ে কাজ করার জন্য নিরাপদ। এটা কখনোই ১ এর বেশি বা ০ এর কম কিছু বলবে না। সিদ্ধান্তটা তাই বাস্তবের সীমার ভেতরেই থাকে।”</p>
+<h3 id="s1">২. আমাদের থিসিস: অনলাইন শপিং করবে কি করবে না?</h3>
+<p id="p14">আবির ল্যাপটপে নতুন একটা ডেটা শিট ওপেন করল। “এতক্ষণ আমরা দেখলাম নম্বর কত বাড়বে বা কমবে। কিন্তু বাস্তবে অনেক গবেষণার ফলাফল তো আর সংখ্যায় হয় না, হয় হ্যাঁ বা না তে। যেমন আমাদের থিসিসের প্রশ্নটা দেখ, ফেসবুকে ১ ঘণ্টা বেশি সময় দিলে কি ছাত্ররা অনলাইন শপিং করবে? উত্তর হবে হয় হ্যাঁ, অথবা না। এখানে তো আর কেউ ৫.৫ বার শপিং করবে না!”</p>
+<p id="p15">ফারহান মাথা নেড়ে বলল, “তার মানে এখানে আমাদের ফলাফল বা Dependent Variable হলো শপিং করেছে কি না। মানে ১ সমান হ্যাঁ এবং ০ সমান না। আর কারণ বা Independent Variable হলো ফেসবুকে কাটানো সময়।”</p>
+<p id="p16">“একদম পারফেক্ট!” আবির বলল। “যেহেতু আমাদের ফলাফলটা শুধু ০ এবং ১ এর মধ্যে আটকে আছে, মানে অপশন মাত্র দুইটি, তাই এখানে আগের ওই সোজা লাইনের লিনিয়ার রিগ্রেশন কাজ করবে না। আমাদের লাগবে এমন একটা মডেল, যে এই হ্যাঁ বা না এর সম্ভাবনা মাপে। আর যেহেতু আমাদের কাঙ্ক্ষিত উত্তর কেবল হ্যাঁ অথবা না অর্থাৎ বাইনারি, তাই পরিসংখ্যানের ভাষায় এই টেস্টের গালভরা নাম হলো Binary Logistic Regression।”</p>
+<p id="p17">আবির সফটওয়্যারে টেস্ট রান করল। এরপর রেজাল্ট টেবিল থেকে একটা নির্দিষ্ট কলামের দিকে আঙুল দিয়ে বলল, “লজিস্টিক রিগ্রেশনের আসল জাদুকরী সংখ্যাটা লুকিয়ে আছে এখানে। এর নাম Odds Ratio বা OR।”</p>
+<h3 id="s2">৩. অডস রেশিও (Odds Ratio)</h3>
+<p id="p18">ফারহান টেবিলের দিকে তাকিয়ে ভুরু কুঁচকে বলল, “এই Odds Ratio জিনিসটা কী?”</p>
+<p id="p19">আবির বলল, “লিনিয়ার রিগ্রেশনে আমরা সরাসরি বলতাম ১ ঘণ্টা পড়লে ৫ নম্বর বাড়বে। কিন্তু লজিস্টিক রিগ্রেশনে ফলাফল তো হ্যাঁ বা না। তাই এখানে আমরা সরাসরি এতটুকু বাড়বে বলতে পারি না। আমরা বলি সম্ভাবনা বা সুযোগ কতগুণ বাড়বে বা কমবে। থিসিসে এটাই সবচেয়ে বেশি লিখতে হবে।”</p>
+<p id="p20">সে খাতা টেনে নিয়ে Odds Ratio ব্যাখ্যার নিয়মটা লিখে দিল:</p>
+<ul>
+<li><p id="p21">যদি OR ঠিক ১ হয়: তার মানে কোনো প্রভাব নেই। ফেসবুক চালালেও যা, না চালালেও তা।</p></li>
+<li><p id="p22">যদি OR ১ এর চেয়ে বড় হয়: তার মানে সম্ভাবনা বাড়ে।</p></li>
+<li><p id="p23">যদি OR ১ এর চেয়ে ছোট হয়: তার মানে সম্ভাবনা কমে।</p></li>
+</ul>
+<p id="p24">আবির এবার ফারহানের দিকে তাকিয়ে বলল, “তোর ডেটায় যদি পাস করার Odds Ratio ১ এর চেয়ে বড় আসে, তার মানে তুই যত বেশি পড়বি তোর পাস করার চান্স তত বাড়বে। আর যদি ছোট আসে, তার মানে উল্টো। সহজ কথায়, এই একটা সংখ্যা দেখেই তুই বলে দিতে পারবি ঘটনা ঘটার সম্ভাবনা বাড়ছে নাকি কমছে।”</p>
+<h3 id="s3">৪. শুধু হ্যাঁ বা না নয়, অপশন যদি ৩টা হয়? (Multinomial Logistic Regression)</h3>
+<p id="p25">ফারহান হঠাৎ নড়েচড়ে বসে বলল, “বস, সব প্রশ্নের উত্তর তো আর শুধু হ্যাঁ বা না হয় না। ধর, আমরা জানতে চাই অনলাইনে শপিং করার সময় ছাত্ররা কীভাবে পেমেন্ট করে?”</p>
+<p id="p26">সে আঙুল গুনে অপশনগুলো দেখাল, “অপশন ধরলাম ৩টা। বিকাশ, নগদ আর ক্যাশ অন ডেলিভারি। এখানে তো আর ১ বা ০ দিয়ে কাজ হবে না। এখানে ৩টা সম্পূর্ণ আলাদা ক্যাটাগরি। তখন কী করব?”</p>
+<p id="p27">আবির হেসে বলল, “গুড কোয়েশ্চেন! যখন আমাদের আউটকাম বা ফলাফলের অপশন ২ এর বেশি হয় এবং তাদের মধ্যে কোনো র‍্যাঙ্ক বা ছোট বড় অর্ডার থাকে না, তখন আমরা বাইনারি থেকে বের হয়ে চলে যাই Multinomial Logistic Regression এ। কারণ বিকাশ তো আর নগদের চেয়ে বড় কিছু না, এগুলো শুধুই আলাদা অপশন।”</p>
+<p id="p28">“এটা কীভাবে কাজ করে?” ফারহান জানতে চাইল।</p>
+<p id="p29">আবির বোঝাতে শুরু করল, “এখানে সফটওয়্যার খুব চালাকি করে। সে একসাথে তিনটার জট পাকায় না। সে যেকোনো একটা অপশনকে বেস বা ভিত্তি হিসেবে ধরে নেয়। ধর, আমরা ঠিক করলাম ক্যাশ অন ডেলিভারি হলো আমাদের বেস বা স্ট্যান্ডার্ড। এরপর সে মাপে, ক্যাশের তুলনায় বিকাশ ব্যবহারের সম্ভাবনা কতটা, আর ক্যাশের তুলনায় নগদ ব্যবহারের সম্ভাবনা কতটা। মানে সে সব সময় একটা বেঞ্চমার্ক ঠিক করে তার সাপেক্ষে বাকিদের মাপে।”</p>
+<p id="p30">সাব্বির মাথা নেড়ে বলল, “ও আচ্ছা! তার মানে অপশন যতগুলোই থাক, সে একটাকে কেন্দ্রে রেখে বাকিদের সাথে তুলনা করবে।”</p>
+<h3 id="s4">৫. যখন অপশনগুলোতে ছোট বড় বা র‍্যাঙ্ক থাকে (Ordinal Logistic Regression)</h3>
+<p id="p31">সাব্বির এতক্ষণ মন দিয়ে সব শুনছিল। সে এবার খাতাটা টেনে নিয়ে বলল, “মাল্টিনোমিয়াল তো বুঝলাম। কিন্তু আমাদের থিসিসের নামের দ্বিতীয় পার্টটার কী হবে? মানসিক চাপ? সার্ভেতে তো আমরা ছাত্রদের মানসিক চাপ মাপার জন্য ৩টা অপশন দিয়েছিলাম। কম, মাঝারি আর বেশি। এগুলোও তো ৩টা অপশন। তাহলে কি পেমেন্ট মেথডের মতো এখানেও আমরা মাল্টিনোমিয়াল রিগ্রেশন করব?”</p>
+<p id="p32">আবির মাথা নেড়ে বলল, “উঁহু! এখানেই সাধারণ ছাত্ররা ভুল করে। একটু ভালো করে ভেবে দেখ। বিকাশ, নগদ আর ক্যাশের মধ্যে কে কার চেয়ে বড় বা ছোট, তার কোনো সিরিয়াল বা র‍্যাঙ্ক ছিল না। কিন্তু মানসিক চাপের ক্ষেত্রে একটা স্পষ্ট অর্ডার বা ক্রম আছে। বেশি চাপ মানে অবশ্যই মাঝারি অবস্থার চেয়ে খারাপ, আবার মাঝারি মানে কম এর চেয়ে খারাপ।”</p>
+<p id="p33">সে কলম দিয়ে খাতায় একটা সিঁড়ি আঁকল। “যখন আমাদের ফলাফলের অপশনগুলো ৩ বা তার বেশি হয়, এবং তাদের মধ্যে একটা স্পষ্ট সিঁড়ি বা র‍্যাঙ্ক থাকে, তখন মাল্টিনোমিয়াল দিয়ে কাজ হবে না। এই অর্ডার বা ক্রম থাকার কারণেই তখন আমরা ব্যবহার করি Ordinal Logistic Regression।”</p>
+<p id="p34">ফারহান হাত তুলে বলল, “দাঁড়া দাঁড়া! মাল্টিনোমিয়ালে যেমন ক্যাশ কে বেস ধরেছিলাম, এখানে বেস কোনটা? কম চাপ?”</p>
+<p id="p35">আবির হেসে বলল, “অসাধারণ পয়েন্ট ধরেছিস! কিন্তু এখানেই অর্ডিনাল রিগ্রেশনের ম্যাজিক। যেহেতু এখানে একটা নির্দিষ্ট সিঁড়ি বা ক্রম আছে, তাই আলাদা করে কোনো একটাকে বেস ধরে বাকিদের সাথে আলাদা আলাদা ফাইট করাতে হয় না।”</p>
+<p id="p36">সাব্বির ভুরু কুঁচকে বলল, “বেস ছাড়া তুলনা হয় কীভাবে?”</p>
+<p id="p37">আবির বোঝাল, “কারণ অর্ডিনাল রিগ্রেশন পুরো সিঁড়িটাকে একসাথে মাপে। সে ধরে নেয়, সিঁড়ির যেকোনো ধাপ টপকানোর নিয়ম মোটামুটি একই। তুই যদি কারণটা একটু বাড়াস, তবে ফলাফলটা সিঁড়ির যেকোনো এক ধাপ উপরে উঠে যাওয়ার চান্স কতটা বাড়বে সেটাই সে একবারেই বলে দেয়। অর্থাৎ, কম থেকে মাঝারি তে যাওয়ার যা চান্স, মাঝারি থেকে বেশি তে যাওয়ার চান্সও সে একই মডেলে ধরে নেয়।”</p>
+<p id="p38">সন্ধ্যা হয়ে এল। মশা কামড়াতে শুরু করেছে। আবির ল্যাপটপ ব্যাগে ঢোকাতে ঢোকাতে বলল, “আজকের মতো ক্লাস শেষ। এই চার্টটা মাথায় গেঁথে নে:”</p>
+<div class="table-wrap" tabindex="0"><table>
+
+<thead>
+<tr class="header">
+<th><strong>আমার প্রশ্ন</strong></th>
+<th><strong>টেস্টের নাম</strong></th>
+<th><strong>ফলাফল কী হবে? (Y)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>১. সংখ্যা কত হবে?</strong> (বেতন কত? নম্বর কত?)</td>
+<td>Linear Regression</td>
+<td>সংখ্যা (Continuous)</td>
+</tr>
+<tr class="even">
+<td><strong>২. হবে কি হবে না?</strong> (পাস বা ফেল, হ্যাঁ বা না)</td>
+<td>Binary Logistic Regression</td>
+<td>২টা ক্যাটাগরি (০ এবং ১)</td>
+</tr>
+<tr class="odd">
+<td><strong>৩. কোনটা পছন্দ করবে?</strong> (বিকাশ, নগদ বা ক্যাশ)</td>
+<td>Multinomial Logistic Regression</td>
+<td>৩ বা তার বেশি ক্যাটাগরি (কোনো র‍্যাঙ্ক নেই)</td>
+</tr>
+<tr class="even">
+<td><strong>৪. লেভেল বা ধাপ কতটা বাড়বে?</strong> (কম, মাঝারি বা বেশি)</td>
+<td>Ordinal Logistic Regression</td>
+<td>৩ বা তার বেশি ক্যাটাগরি (যাদের স্পষ্ট র‍্যাঙ্ক বা সিঁড়ি আছে)</td>
+</tr>
+</tbody>
+</table></div>
+<p id="p39">ফারহান উঠে দাঁড়িয়ে বলল, “দোস্ত, এখন আমি ক্লিয়ার। যদি বলি কত টাকা খরচ করবি, তাহলে Linear। যদি বলি গার্লফ্রেন্ডকে গিফট দিবি কি না, তখন Binary Logistic।”</p>
+<p id="p40">সাব্বির হেসে বলল, “আর যদি বলি গিফট হিসেবে কী দিবি? শাড়ি, চকলেট না ফুল? তখন Multinomial।”</p>
+<p id="p41">আবির হাসতে হাসতে যোগ করল, “আর যদি মাপতে চাস গিফট পেয়ে গার্লফ্রেন্ডের রিঅ্যাকশন কেমন হবে, অল্প খুশি, মাঝারি খুশি, নাকি মহাখুশি? তখন Ordinal!”</p>
+<p id="p42">তিনজনেই হো হো করে হেসে উঠল। আবির ওদের পিঠ চাপড়ে দিল। “তোরা তো একদম বস হয়ে গেছিস! চল, এবার হলে ফিরি।”</p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-26.html"><span>Previous chapter</span><b>ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</b></a><a class="pg next" href="ch-28.html"><span>Next chapter</span><b>যখন সীমানা থাকে (Tobit &amp; Probit)</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

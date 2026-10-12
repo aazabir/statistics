@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html" aria-current="page">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a><ul class="toc-sub"><li><a href="#s0">১. Simple Linear Regression</a></li><li><a href="#s1">২. যখন কারণ অনেকগুলো: Multiple Linear Regression</a></li><li><a href="#s2">৩. আমাদের ভবিষ্যদ্বাণী কতটা সঠিক?</a></li></ul></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-26.html">
+<article>
+<h1 class="chapter-title">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</h1>
+<p class="meta">7 min read</p>
+
+<div class="prose">
+
+<p id="p1">পরদিন সকালে ল্যাবে ঢোকার মুখেই সাব্বির আবিরকে থামাল। তার হাতে এক কাপ কফি, কিন্তু চোখেমুখে চিন্তার ছাপ।</p>
+<p id="p2">সাব্বির বলল, “দোস্ত, কালকের ANOVA তো দারুণ ছিল। আমরা জেনেছি যে সায়েন্স আর আর্টসের ছাত্রদের নম্বরের মধ্যে পার্থক্য আছে। কিন্তু আমার মনে একটা খটকা আছে।”</p>
+<p id="p3">আবির ল্যাপটপ অন করতে করতে বলল, “কী খটকা?”</p>
+<p id="p4">সাব্বির বলল, “দেখ, ANOVA শুধু বলল পার্থক্য আছে, কিন্তু সম্পর্কটা কেমন সেটা তো বলল না। ধর, আমি জানতে চাই একজন ছাত্র যদি প্রতিদিন ১ ঘণ্টা বেশি পড়ে, তাহলে তার ফাইনাল পরীক্ষার নম্বর ঠিক কত বাড়বে? ৫ নম্বর? নাকি ১০ নম্বর? আমি কি ভবিষ্যৎবাণী করতে পারব?”</p>
+<p id="p5">ফারহান পাশ থেকে যোগ করল, “শুধু পড়ালেখা কেন? ক্লাসে উপস্থিতি বা অ্যাটেনডেন্সের কি কোনো দাম নেই? আমি জানতে চাই বাসায় পড়া আর ক্লাসে আসা এই দুইটা মিলে রেজাল্টকে কীভাবে প্রভাবিত করে?”</p>
+<p id="p6">আবির হাসল। “তোরা এখন আর শুধু তুলনা করতে চাচ্ছিস না, তোরা ভবিষ্যৎবাণী বা Prediction করতে চাচ্ছিস। আর পরিসংখ্যানের জগতে ভবিষ্যৎবাণীর রাজাকে বলা হয় Regression Analysis।”</p>
+<h3 id="s0">১. Simple Linear Regression</h3>
+<p id="p7">আবির বোঝানো শুরু করল, “প্রথমে একদম সহজ করে ভাব। আমাদের রিসার্চের প্রশ্ন হলো, পড়াশোনার জন্য বরাদ্দকৃত সময় কি ভালো রেজাল্টের কারণ? আমরা দেখতে চাই, একটা নির্দিষ্ট কারণ বা Independent Variable কীভাবে একটা ফলাফল বা Dependent Variable-কে প্রভাবিত করে। আমাদের প্রশ্ন হলো, আমি যদি পড়ার টেবিলে ১ ঘণ্টা এক্সট্রা সময় দিই, আমার নম্বর ঠিক কতটুকু বাড়বে?”</p>
+<p id="p8">“এখানে সবচেয়ে গুরুত্বপূর্ণ বিষয় হলো Simple Linear Regression এ দুটো ভেরিয়েবলই হতে হবে সংখ্যা বা Continuous Numbers। আমাদের Independent Variable বা কারণ হবে পড়ার সময় (ঘণ্টায়)। আর Dependent Variable বা ফলাফল হবে পরীক্ষার নম্বর। এবং এই সিম্পল মডেলে কারণ বা Independent Variable হবে মাত্র একটা।”</p>
+<p id="p9">আবির সফটওয়্যারে টেস্ট রান করে বলল, “দেখ, এখানে আমাদের সফটওয়্যার মূলত দুটো খুব গুরুত্বপূর্ণ প্রশ্নের উত্তর দেবে।”</p>
+<p id="p10">“প্রথম প্রশ্ন হলো, সম্পর্কটা কি পজিটিভ না নেগেটিভ? রেজাল্ট বলছে সম্পর্ক পজিটিভ। এর মানে, পড়ার সময় বাড়লে নম্বরও বাড়ে। যদি নেগেটিভ হতো, তার মানে দাঁড়াত বেশি পড়লে নম্বর কমে যায়! যা বাস্তবে সাধারণত হয় না।”</p>
+<p id="p11">“দ্বিতীয় প্রশ্ন, প্রভাবটা কতটা তীব্র? আবির ল্যাপটপের স্ক্রিনে আঙুল দিয়ে দেখাল, এখানে একটা সংখ্যা আছে, যাকে বলে কো-এফিসিয়েন্ট (Coefficient)। আমাদের ডেটায় এই কো-এফিসিয়েন্ট হলো ৫। এটাই হলো রিগ্রেশনের জাদুকরী শক্তি!”</p>
+<p id="p12">ফারহান ভুরু কুঁচকে বলল, “এই ৫ দিয়ে আমি কী করব?”</p>
+<p id="p13">আবির হাসল। “এই ৫ তোকে একটা গ্যারান্টি বা হার বলে দিচ্ছে। এর মানে হলো তুই যদি প্রতিদিন ১ ঘণ্টা বেশি পড়িস, তাহলে ফাইনালে তোর গড়ে ৫ নম্বর বাড়বে। তুই যদি পড়ার সময় ২ ঘণ্টা বাড়াস, তাহলে তোর নম্বর ১০ বাড়বে। অর্থাৎ, কারণ (X) এক ইউনিট বদলালে, ফলাফল (Y) ঠিক কতটা বদলাবে সেই সংখ্যাটা বলে দেয় রিগ্রেশন।”</p>
+<p id="p14">সাব্বির চোখ বড় বড় করে বলল, “তার মানে, আমি যদি জানতে পারি তুই দিনে কত ঘণ্টা পড়িস, তাহলে তুই ফাইনালে কত পাবি সেটা আমি আগে থেকেই প্রেডিক্ট বা ভবিষ্যৎবাণী করে দিতে পারব?”</p>
+<p id="p15">“একদম তাই! এটাই সিম্পল রিগ্রেশনের আসল কাজ। সে শুধু সম্পর্ক মাপে না, সে অতীত ডেটা দেখে ভবিষ্যতের একটা নিখুঁত ভবিষ্যদ্বাণী করতে পারে।”</p>
+<p id="p16">সাব্বির দ্রুত তার নোটবুকে লিখে নিল: <em>যখন আমরা জানতে চাই যে একটা নির্দিষ্ট কারণের প্রভাবে ফলাফল ঠিক কতটা সংখ্যায় বদলায়, তখন আমরা Simple Linear Regression ব্যবহার করব।</em></p>
+<h3 id="s1">২. যখন কারণ অনেকগুলো: Multiple Linear Regression</h3>
+<p id="p17">ফারহান হঠাৎ হাত তুলে বলল, “দাঁড়া আবির! শুধু বাসায় কতক্ষণ পড়ল, সেটা দিয়েই কি সব বিচার করা যাবে? এমন অনেকে আছে যারা বাসায় কম পড়ে, কিন্তু ক্লাসে স্যারের সব কথা একদম গিলে খায়, মানে অ্যাটেনডেন্স ১০০%। আবার কেউ কেউ আছে যারা শুধু বাসায় একা একা পড়ে কিন্তু ক্লাসে যায় না। আমি চাই পড়ার সময় আর ক্লাসে উপস্থিতি এই দুইটাকেই হিসেবে ধরতে।”</p>
+<p id="p18">আবির হাসল, “চমৎকার লজিক! বাস্তবে তো আর একটা মাত্র কারণে রেজাল্ট ভালো বা খারাপ হয় না। ভালো রেজাল্টের পেছনে অনেকগুলো ফ্যাক্টর থাকে। যখন আমাদের কারণ বা প্রভাবক একের অধিক হয়, তখন আমরা সিম্পল রিগ্রেশন থেকে বের হয়ে চলে যাই Multiple Linear Regression-এ।”</p>
+<p id="p19">সে আরও বুঝিয়ে বলল, “এখানে ফারহান জানতে চাইছে বাসায় পড়ার সময় এবং ক্লাসে উপস্থিতি এই দুইটা আলাদা কারণ একসঙ্গে মিলে পরীক্ষার নম্বরকে কীভাবে নিয়ন্ত্রণ করে। তবে এখানে একটা কড়া নিয়ম মনে রাখতে হবে, ফলাফলকে অর্থাৎ পরীক্ষার নম্বরকে অবশ্যই Continuous Numbers বা সাধারণ সংখ্যা হতে হবে।”</p>
+<p id="p20">আবির সফটওয়্যারে নতুন করে মডেল রান করল। এবার আউটপুট এল আরও ইন্টারেস্টিং।</p>
+<p id="p21">আবির স্ক্রিনের দিকে তাকিয়ে বলল, “এই টেস্টের রেজাল্ট আমাদের একটা জাদুকরী তথ্য দেয়। পরিসংখ্যানে একে বলে ‘অন্য সবকিছু অপরিবর্তিত রেখে’ বা Holding other factors constant বিচার করা। ধর, আমাদের সফটওয়্যার দুইটা আলাদা কো-এফিসিয়েন্ট দিয়েছে।”</p>
+<p id="p22">সে খাতা টেনে নিয়ে বোঝাতে শুরু করল, “ধর, হাবিব আর রাকিব এই দুইজন ছাত্রের ক্লাসের অ্যাটেনডেন্স একদম সমান, ধরি ৮০%। অর্থাৎ এখানে আমরা উপস্থিতির প্রভাবটাকে স্থির করে দিলাম। এখন এদের মধ্যে একজন যদি বাসায় ১ ঘণ্টা বেশি পড়ে, সফটওয়্যার বলছে ফাইনালে তার নম্বর ৪ বাড়বে। এখানে শুধু পড়ার সময়ের প্রভাবটা মাপা হলো।”</p>
+<p id="p23">“আবার ধর, সিয়াম আর রবিন বাসায় প্রতিদিন সমান সময় পড়ে, ধরি ৩ ঘণ্টা। অর্থাৎ এখানে আমরা পড়ার সময়টাকে স্থির করে দিলাম। কিন্তু সিয়াম ক্লাসে রবিনের চেয়ে ১০% বেশি উপস্থিত ছিল। সফটওয়্যার দেখাচ্ছে, পড়ার সময় সমান হওয়া সত্ত্বেও শুধু ক্লাসে বেশি আসার কারণেই সিয়ামের নম্বর ৩ বেড়ে গেছে!”</p>
+<p id="p24">ফারহান অবাক হয়ে বলল, “তার মানে বাসায় না পড়লেও শুধু ক্লাসে মুখ দেখালেই নম্বর বাড়ে? শিক্ষকরা কি তবে মুখ চিনে নম্বর দেন?”</p>
+<p id="p25">আবির হেসে ফেলল, “আরে নাহ! শিক্ষকরা মুখ চিনে নম্বর দেন না। কিন্তু ক্লাসে উপস্থিত থাকার একটা বিশাল ভ্যালু আছে। ক্লাসে থাকলে তুই স্যারের লেকচার শুনছিস, কঠিন টপিকগুলো সহজে বুঝছিস। তাই বাসায় কম পড়লেও ওই কনসেপ্ট ক্লিয়ার থাকার কারণে তুই পরীক্ষায় ভালো লিখে আসতে পারবি। রিগ্রেশন আসলে সেই ডেটাটাই ধরেছে!”</p>
+<p id="p26">সাব্বির মাথা নেড়ে বলল, “দারুণ! তার মানে একাধিক কারণ থাকলেও, কে কার ঘাড়ে চেপে কতটা প্রভাব ফেলছে, সেটা মাল্টিপল রিগ্রেশন একদম আলাদা করে চিমটে দিয়ে বের করে আনতে পারে!”</p>
+<h3 id="s2">৩. আমাদের ভবিষ্যদ্বাণী কতটা সঠিক?</h3>
+<p id="p27">সাব্বির জিজ্ঞেস করল, “আচ্ছা আবির, আমরা পড়া আর উপস্থিতি দিয়ে নম্বর তো ব্যাখ্যা করলাম। কিন্তু রেজাল্ট কি শুধুই এই দুইটার ওপর নির্ভর করে? পরীক্ষার হলে প্রশ্ন কমন পড়া, মেধা বা ভাগ্য এসবের কি কোনো দাম নেই?”</p>
+<p id="p28">আবির হাসল, “অবশ্যই আছে! আর ঠিক এখানেই আসে আমাদের সেই পুরোনো <strong>বন্ধু R-squared</strong> বা মডেলের ব্যাখ্যার ক্ষমতা। তুই তো আগেই জানিস, এই ভ্যালুটা বলে দেয় আমাদের মডেলের ভেতরের কারণগুলো (পড়া + উপস্থিতি) দিয়ে আমরা ফলাফলের ঠিক কতটুকু ব্যাখ্যা করতে পেরেছি। আমাদের এই মডেলের Adjusted R-squared হয়তো মাত্র ০.২৫। তার মানে রেজাল্টের ৭৫% কারণই আমাদের অজানা! ওই যে তুই বললি— ভাগ্য, প্রশ্ন কঠিন হওয়া, মেধা বা পরীক্ষার দিনের মুড, সেগুলোর প্রভাব।”</p>
+<p id="p29">“তাহলে তো আমাদের মডেল বিশাল কোনো কাজের না!” ফারহান হতাশ হলো।</p>
+<p id="p30">“হ্যাঁ, তাই। তবে আমরা তো আগেই শিখেছি, অযথা আবর্জনা ভেরিয়েবল (যেমন: শার্টের কালার) মডেলে ঢুকিয়ে সাধারণ R-squared বাড়িয়ে কোনো লাভ নেই। কড়া হেডমাস্টার Adjusted R-squared ঠিকই আমাদের পেনাল্টি দিয়ে ওই চুরি ধরে ফেলবে।”</p>
+<p id="p31">ল্যাব থেকে বের হওয়ার আগে আবির বোর্ডে সামারি লিখে দিল:</p>
+<div class="table-wrap" tabindex="0"><table>
+
+<thead>
+<tr class="header">
+<th>প্রশ্ন</th>
+<th>টেস্টের নাম</th>
+<th>ডেটা কেমন হবে?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>১. একটার প্রভাবে আরেকটা কতটা বদলায়? (১ ঘণ্টা পড়লে নম্বর কত বাড়ে?)</td>
+<td>Simple Linear Regression</td>
+<td>X: পড়ার সময় (সংখ্যা), Y: নম্বর (সংখ্যা)</td>
+</tr>
+<tr class="even">
+<td>২. অনেকগুলো কারণ মিলে কীভাবে প্রভাবিত করে? (পড়া ও ক্লাস মিলে নম্বর কত বাড়ে?)</td>
+<td>Multiple Linear Regression</td>
+<td>X1, X2: সংখ্যা, Y: নম্বর (সংখ্যা)</td>
+</tr>
+<tr class="odd">
+<td>৩. আমার মডেল কতটা ভালো?</td>
+<td>Check Adjusted R-squared</td>
+<td>যত বেশি, তত ভালো।</td>
+</tr>
+</tbody>
+</table></div>
+<p id="p32">ফারহান নোটবুক বন্ধ করে বলল, “বস! এখন থেকে আর জ্যোতিষীর কাছে যাব না। কার কত ঘণ্টা পড়া আর অ্যাটেনডেন্স সেটা দেখেই বলে দেব সে ফাইনালে কত পাবে!”</p>
+<p id="p33">আবির হেসে বলল, “ভবিষ্যৎদ্রষ্টা না, ডেটা এনালিস্ট! তবে মনে রাখবি রিগ্রেশন শুধু প্যাটার্ন বলে, গ্যারান্টি দেয় না।”</p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-25.html"><span>Previous chapter</span><b>দুইয়ের অধিকের গল্প (ANOVA)</b></a><a class="pg next" href="ch-27.html"><span>Next chapter</span><b>হ্যাঁ নাকি না? (Binary Logistic Regression)</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

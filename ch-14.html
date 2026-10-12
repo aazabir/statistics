@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html" aria-current="page">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-14.html">
+<article>
+<h1 class="chapter-title">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</h1>
+<p class="meta">6 min read</p>
+
+<div class="prose">
+
+<p id="p1">সন্ধ্যার পর তারা হোটেল থেকে বেরিয়ে সমুদ্রের পাড়ে হাঁটতে শুরু করল। রোদ আর নেই, বাতাস এখন বেশ নরম। সমুদ্রের গর্জনের শব্দটা এখন দিনের বেলার চেয়ে অনেক বেশি স্পষ্ট।</p>
+<p id="p2">হাঁটতে হাঁটতে ফারহান বলল, “দোস্ত, গত কয়েকদিন তো অনেক ভারী ভারী কথা হলো। কিন্তু দিনশেষে তো একটা প্রশ্ন থেকেই যায়। ধর, আমার হাতে ডেটা আছে, এখন আমি কোন টেস্টটা নির্বাচন করবো? কিসের ভিত্তিতে ঠিক করব?”</p>
+<p id="p3">আবির হেসে বলল, “সবচেয়ে দামী প্রশ্নটা তুই এখনই করেছিস। কারণ ডাক্তার যেমন সব রোগীর জন্য একই ওষুধ দেয় না, পরিসংখ্যানবিদরাও সব ডেটার জন্য একই টেস্ট ব্যবহার করে না।”</p>
+<p id="p4">সে ভেজা বালুর ওপর একটা বড় চারকোনা দাগ টানল। “যেকোনো টেস্ট নির্বাচনের জন্য তোকে মূলত দুইটা বেসিক জিনিস দেখতে হবে। প্রথমত, তোর ডেটার রাস্তা বা Distribution কেমন? আর দ্বিতীয়ত, তোর ডেটাগুলো কিভাবে এসেছে, যাকে আমরা Study Design বলি।”</p>
+<p id="p5">সাব্বির কৌতূহল নিয়ে বলল, “রাস্তা কেমন মানে?”</p>
+<p id="p6">আবির বলল, “মনে আছে গতদিন দুপুরে বলেছিলাম ফেরারি গাড়ি চালাতে হলে রাস্তা মসৃণ হতে হয়? যদি তোর ডেটা Normal Distribution মেনে চলে এবং তার ভেতরের ছড়ানোটা বা Variance সুষম হয়, তাহলে রাস্তা একদম হাইওয়ের মতো মসৃণ। এই অবস্থায় আমরা যে টেস্টগুলো ব্যবহার করি, তাদের বলে <strong>Parametric Test</strong>।”</p>
+<p id="p7">ফারহান বলল, “তার মানে সব শর্ত ঠিক থাকলে প্যারামেট্রিক?”</p>
+<p id="p8">“হ্যাঁ,” আবির মাথা নাড়ল। “প্যারামেট্রিক টেস্ট খুব শক্তিশালী। এরা ডেটার প্রতিটি সংখ্যার আসল মান বা Value ব্যবহার করে গড়ের (Mean) মাধ্যমে খুব সূক্ষ্ম হিসাব দেয়। কিন্তু এদের একটাই সমস্যা, এরা খুব শৌখিন। শর্ত একটু এদিক ওদিক হলেই এরা ভুল রেজাল্ট দিয়ে বসে।”</p>
+<p id="p9">“আর যদি রাস্তা খারাপ হয়?” সাব্বির জানতে চাইল।</p>
+<p id="p10">আবির বলল, “ধর তোর ডেটা একপেশে বা Skewed, অথবা ডেটার মধ্যে কিছু অদ্ভুত মান বা Outlier বসে আছে। তখন ওই মসৃণ রাস্তার ফেরারি গাড়ি আর চলবে না। তখন তোর দরকার এমন একটা গাড়ি যা ভাঙাচোরা রাস্তাতেও চলতে পারে। এই ধরনের টেস্টগুলোকে বলে Non-parametric Test।”</p>
+<p id="p11">সে আরও একটু ভেঙে বলল, “এদের আরেকটা নাম হলো Distribution-free Test। কারণ এরা ডেটার আকার বা ডিস্ট্রিবিউশন নিয়ে কোনো মাথাব্যথা করে না। এরা আসল সংখ্যা নিয়ে কাজ করার বদলে ডেটাগুলোকে ছোট থেকে বড় সাজিয়ে তাদের Rank বা অবস্থান নিয়ে কাজ করে। কে প্রথম, কে দ্বিতীয়, শুধু সেটাই দেখে। তাই আউটলায়ার এসে এদের কাজে সহজে ঝামেলা করতে পারে না।”</p>
+<p id="p12">ফারহান একটু ভেবে বলল, “তাহলে তো নন-প্যারামেট্রিকই ভালো! কোনো টেনশন নাই, সব জায়গায় চালিয়ে দেওয়া যায়।”</p>
+<p id="p13">আবির হেসে মাথা নেড়ে বলল, “না রে। নন-প্যারামেট্রিক হলো জিপ গাড়ির মতো শক্তপোক্ত, কিন্তু ফেরারি গাড়ির মতো অত স্পিড বা সূক্ষ্মতা এর নেই। তাই রাস্তা ভালো থাকলে প্যারামেট্রিকই সেরা চয়েজ। আর রাস্তা খারাপ হলেই কেবল নন-প্যারামেট্রিক ভরসা।”</p>
+<p id="p14">তারা হাঁটতে হাঁটতে একটা বড় জেলে নৌকার পাশে এসে বসল।</p>
+<p id="p15">আবির বলল, “রাস্তা তো গেল। এবার দেখতে হবে ডেটাগুলো কার কাছ থেকে এসেছে। এখানে মূলত তিনটা অবস্থা হতে পারে।”</p>
+<p id="p16"><strong>১. Paired Data (জোড়া ডেটা):</strong> আবির ফারহানের দিকে আঙুল তুলে বলল, “ধর, আমি পরিমাপ করলাম সেন্ট মার্টিনে আসার আগে তোর ওজন কত ছিল আর এক সপ্তাহ মাছ ভাত খাওয়ার পর তোর ওজন কত হলো। খেয়াল কর, মানুষ কিন্তু তুই একজনই। তোরই আগের আর পরের অবস্থার তুলনা হচ্ছে। যখন একই মানুষের বা একই ইউনিটের ওপর দুইবার মাপ নেওয়া হয়, তখন তাকে বলে Paired Data।”</p>
+<p id="p17"><strong>২. Independent Samples (স্বাধীন দল):</strong> “এবার ধর, আমি তুলনা করছি ঢাকার পর্যটক আর চট্টগ্রামের পর্যটকদের গড় খরচ। যারা ঢাকা থেকে এসেছে, তাদের সাথে চট্টগ্রামের পর্যটকদের কোনো সম্পর্ক নেই। এরা সম্পূর্ণ আলাদা দুইটা গ্রুপ। একের উত্তরের প্রভাব অন্যের ওপর পড়ে না। এই ধরনের ডেটাকে বলে Independent Samples।”</p>
+<p id="p18"><strong>৩. Matched Samples (মিলানো জোড়া):</strong> সাব্বির বলল, “আর তৃতীয়টা?” আবির বলল, “এটা একটু ট্রিকি, কিন্তু গবেষণায় খুব কাজে লাগে। ধর, দুইটা সম্পূর্ণ আলাদা গ্রুপ, কিন্তু আমরা ইচ্ছা করে তাদের কিছু শর্ত দিয়েছি। যেমন আমরা একদল ধূমপায়ী নিলাম আর একদল অধূমপায়ী নিলাম। কিন্তু শর্ত দিলাম, দলে প্রত্যেকের বয়স আর ওজন একদম সমান হতে হবে। অর্থাৎ, ২০ বছরের ধূমপায়ীর সাথে ২০ বছরের অধূমপায়ীর তুলনা। মানুষ আলাদা, কিন্তু অন্য কোনো কারণ যেন ফলাফলকে প্রভাবিত করতে না পারে, তাই বৈশিষ্ট্য মিলিয়ে গ্রুপ করা হয়েছে। একে বলে Matched Samples।”</p>
+<p id="p19">ফারহান চোখ বড় করে বলল, “তার মানে দেখতে ইনডিপেনডেন্ট মনে হলেও, ভেতরে ভেতরে এরা পেয়ারড হিসেবে কাজ করে?”</p>
+<p id="p20">“একদম তাই!” আবির সায় দিল। “এখন তুই যদি এই দুটো কনসেপ্ট, অর্থাৎ রাস্তার ধরন আর মানুষের ধরন একসাথে মিলিয়ে দিস, তাহলেই তোর সামনে কোন টেস্ট করবি তার পুরো ম্যাপ পরিষ্কার হয়ে যাবে।”</p>
+<p id="p21">আবির পকেট থেকে একটা কাঠি বের করে বালুর ওপর একটা সুন্দর ছক আঁকল। “তোর বোঝার সুবিধার জন্য আমি টেস্টগুলোর নাম দিয়ে একটা ছক বানিয়ে দিচ্ছি। দেখলেই পুরো কনসেপ্ট ক্লিয়ার হয়ে যাবে।”</p>
+<p id="p22">আবির ছকটার দিকে তাকিয়ে বলল, “দেখ, সিদ্ধান্ত কখনো এক লাইনে নেওয়া যায় না। প্রথমে তুই ডেটার ন্যাচার দেখবি, সেটা Normal নাকি Skewed। এতে ঠিক হবে তুই ছকের মাঝখানের কলামে থাকবি নাকি শেষের কলামে যাবি। তারপর তুই দেখবি মানুষগুলো কে, অর্থাৎ ডেটা কোথা থেকে এসেছে। এতে ঠিক হবে তুই কোন সারির টেস্টটা বেছে নিবি।”</p>
+<div class="table-wrap" tabindex="0"><table>
+
+<thead>
+<tr class="header">
+<th>স্টাডি ডিজাইন (Study Design)</th>
+<th>মসৃণ রাস্তা (Parametric Test)</th>
+<th>এবড়োখেবড়ো রাস্তা (Non-parametric Test)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>দুটি সম্পূর্ণ আলাদা গ্রুপ (Independent)</td>
+<td>Independent Samples t-test</td>
+<td>Mann-Whitney U Test</td>
+</tr>
+<tr class="even">
+<td>একই মানুষের আগের ও পরের অবস্থা (Paired)</td>
+<td>Paired Samples t-test</td>
+<td>Wilcoxon Signed-Rank Test</td>
+</tr>
+<tr class="odd">
+<td>তিন বা তার বেশি আলাদা গ্রুপ</td>
+<td>One-way ANOVA</td>
+<td>Kruskal-Wallis Test</td>
+</tr>
+</tbody>
+</table></div>
+<p id="p23">বাতাস একটু ঠান্ডা হয়ে এসেছে। আবির জ্যাকেটের চেইনটা টেনে দিল।</p>
+<p id="p24">ফারহান ছকটার দিকে কিছুক্ষণ তাকিয়ে থেকে একটা স্বস্তির নিশ্বাস ফেলল। “বুঝলাম বস। ছকটা একদম মাথার ভেতর গেঁথে গেছে। ভুল টেস্ট বেছে নেওয়া মানে হাইওয়েতে ট্রাক্টর চালানো অথবা কাদা রাস্তায় ফেরারি নামানো। দুটোই এক্সিডেন্ট করবে।”</p>
+<p id="p25">সবাই একসাথে হেসে উঠল। রাতের অন্ধকারের মাঝে ঢেউয়ের শব্দ ছাপিয়ে তাদের হাসির শব্দ সমুদ্রের বাতাসে মিশে গেল। পরিসংখ্যানের মতো একটা জটিল বিষয়ও আজ এই খোলা আকাশের নিচে এসে কেমন যেন একদম সহজ আর আপন হয়ে উঠেছে।</p>
+<p id="p26"><strong><br />
+</strong></p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-13.html"><span>Previous chapter</span><b>সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</b></a><a class="pg next" href="ch-15.html"><span>Next chapter</span><b>সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

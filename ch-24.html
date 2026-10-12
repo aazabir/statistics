@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>গড়ের লড়াই: কে এগিয়ে? (The t-tests) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="গড়ের লড়াই: কে এগিয়ে? (The t-tests) | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html" aria-current="page">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a><ul class="toc-sub"><li><a href="#s0">১. জাতীয় মানের সাথে লড়াই (One-Sample t-test)</a></li><li><a href="#s1">২. পাবলিক বনাম প্রাইভেট: চিরন্তন দ্বন্দ্ব (Independent Samples t-test)</a></li><li><a href="#s2">৩. নিজের সাথে নিজের লড়াই (Paired Samples t-test)</a></li></ul></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-24.html">
+<article>
+<h1 class="chapter-title">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</h1>
+<p class="meta">8 min read</p>
+
+<div class="prose">
+
+<p id="p1">লাইব্রেরির গ্রুপ স্টাডি রুমে এসি চলছে পুরোদমে, কিন্তু আবির, সাব্বির আর ফারহানের কপালে বিন্দু বিন্দু ঘাম। ফাইনাল ইয়ারের থিসিস জমা দেওয়ার আর মাত্র ২৫ দিন বাকি। তাদের সুপারভাইজার ড. মোশাররফ স্যার ডিপার্টমেন্টের সবচেয়ে কড়া শিক্ষক। গতকালই তিনি ধমক দিয়ে বলেছেন, "শোন, আমাকে গালগল্প শোনাবে না। আমি ডেটা বিশ্বাস করি। তোমাদের হাইপোথিসিস ঠিক না ভুল, সেটা স্ট্যাটিসটিকালি প্রমাণ করে দেখাবে। p-value ছাড়া আমার সামনে আসবে না।"</p>
+<p id="p2">তাদের রিসার্চের টপিক হলো "বিশ্ববিদ্যালয়ের ছাত্রদের অনলাইন শপিং প্যাটার্ন এবং মানসিক চাপ"। ৩০০ জন ছাত্রছাত্রীর কাছ থেকে গুগল ফর্মে ডেটা নেওয়া হয়েছে। ল্যাপটপের স্ক্রিনে এক্সেল শিটটা যেন হাঁ করে তাদের দিকে তাকিয়ে আছে।</p>
+<p id="p3">ফারহান কফিতে একটা চুমুক দিয়ে হতাশ গলায় বলল, "দোস্ত, ডেটা তো সব নিলাম। কিন্তু শুরুটা করব কোত্থেকে? ৩০০ মানুষের খরচ, বয়স, জেন্ডার সব জগাখিচুড়ি পাকিয়ে আছে। স্যার তো প্রথমেই জিজ্ঞেস করবেন আমাদের এই স্যাম্পল কি আদৌ কাজের?"</p>
+<p id="p4">আবির চশমাটা খুলে পরিষ্কার করতে করতে বলল, "প্যারা নিস না। আমরা ধাপে ধাপে আগাব। আমাদের রিসার্চের একটা বড় উদ্দেশ্য হলো 'গড়' (Mean) তুলনা করা। আর যখনই আমরা দুটি গড়ের মধ্যে তুলনা করতে চাই, তখন আমাদের প্রধান অস্ত্র হলো t-test। তবে শর্ত একটাই, ডেটা নরমাল হতে হবে। যেহেতু আমাদের স্যাম্পল সাইজ ৩০০, তাই ধরে নেওয়া যায় এটা নরমাল ডিস্ট্রিবিউশন মেনেই চলছে।"</p>
+<p id="p5">সাব্বির ল্যাপটপটা নিজের দিকে টেনে বলল, "ঠিক আছে বস। তাহলে প্রথম টেস্টটা কী হবে?"</p>
+<h3 id="s0">১. জাতীয় মানের সাথে লড়াই (One-Sample t-test)</h3>
+<p id="p6">আবির বলল, “শোন, গত সপ্তাহে 'বণিক বার্তা'য় একটা রিপোর্ট এসেছিল। সেখানে বলা হয়েছে, বাংলাদেশের ছাত্রছাত্রীরা গড়ে মাসে ২০০০ টাকা অনলাইন শপিংয়ে খরচ করে। এটাকে আমরা ধরব জাতীয় গড় বা স্ট্যান্ডার্ড ভ্যালু (Population Mean)।”</p>
+<p id="p7">"এখন মোশাররফ স্যারের প্রথম প্রশ্ন হবে: 'তোমাদের এই ৩০০ জন ছাত্র কি দেশের সাধারণ ছাত্রদের মতোই, নাকি তারা বেশি বা কম খরচ করে?'"</p>
+<p id="p8">ফারহান বলল, "এটা কীভাবে বুঝব? আমাদের ৩০০ জনের গড় বের করে ২০০০ এর সাথে মিলিয়ে দেখলেই তো হয়।"</p>
+<p id="p9">আবির বলল, "উঁহু! এখানেই পরিসংখ্যানের খেলা। শুধু গড় বের করলে হবে না। আমাদের প্রমাণ করতে হবে যে, পার্থক্যটা কাকতালীয় না। এর জন্য আমরা করব One-Sample t-test।"</p>
+<p id="p10">"খেয়াল কর, আমাদের কাছে স্যাম্পল বা ডেটাসেট মাত্র একটি (আমাদের ৩০০ জন)। আর আমরা তাকে কোনো অন্য গ্রুপের সাথে নয়, বরং আগে থেকে জানা একটি নির্দিষ্ট সংখ্যার (২০০০ টাকা) সাথে তুলনা করছি।</p>
+<ul>
+<li><p id="p11"><strong>নাল হাইপোথিসিস (H0):</strong> আমাদের ছাত্রদের গড় খরচ ২০০০ টাকার সমান (পার্থক্য নেই)।</p></li>
+<li><p id="p12"><strong>অল্টারনেটিভ হাইপোথিসিস (H1):</strong> আমাদের ছাত্রদের গড় খরচ ২০০০ টাকার সমান নয় (পার্থক্য আছে)।"</p></li>
+</ul>
+<p id="p13">আবির সফটওয়্যারে ডেটা ইনপুট দিল। Test Value = 2000 সেট করল। এন্টার চাপতেই রেজাল্ট এল: আমাদের গড় (Mean) ২৫০০ টাকা, t-statistic ৫.৪৫ এবং p-value ০.০০৩।</p>
+<p id="p14">আবির স্ক্রিনের দিকে আঙুল দিয়ে বলল, "দেখ! আমাদের গড় ২৫০০ টাকা, যা ২০০০ এর চেয়ে বেশি। কিন্তু আসল সিদ্ধান্তটা লুকিয়ে আছে p-value-তে। এটা ০.০০৩, যা আমাদের সীমানা ০.০৫-এর চেয়ে অনেক ছোট। এর মানে কী জানিস? এর মানে হলো, আমরা H<sub>0</sub> বা নাল হাইপোথিসিস বাতিল (Reject) করলাম। অর্থাৎ, আমাদের ছাত্ররা যে গড়ে ৫০০ টাকা বেশি খরচ করছে, এটা মোটেও আন্দাজে আসেনি। তারা সত্যিই দেশের সাধারণ ছাত্রদের চেয়ে সিগনিফিক্যান্টলি (Significantly) বেশি খরচ করে।"</p>
+<h3 id="s1">২. পাবলিক বনাম প্রাইভেট: চিরন্তন দ্বন্দ্ব (Independent Samples t-test)</h3>
+<p id="p15">একটু পরেই সাব্বির বলল, "আচ্ছা, এবার একটা সেনসিটিভ টপিকে আসি। ফারহান তো সব সময় বলে বেড়ায় যে প্রাইভেট ভার্সিটির পোলাপান নাকি টাকার কুমির। আজ আমি এটা ডেটা দিয়ে ভুল প্রমাণ করতে চাই।"</p>
+<p id="p16">ফারহান বাঁকা হেসে বলল, "ভুল প্রমাণ করবি? আমি শিওর, তোদের চেয়ে প্রাইভেটের ছেলেমেয়েদের শপিং খরচ অনেক বেশি।"</p>
+<p id="p17">আবির বলল, "ব্যাস! ঝগড়া না করে টেস্ট করি। এখানে আমাদের দুইটা আলাদা গ্রুপ:</p>
+<ul>
+<li><p id="p18"><strong>গ্রুপ ১:</strong> পাবলিকের ছাত্র (১৫০ জন)।</p></li>
+<li><p id="p19"><strong>গ্রুপ ২:</strong> প্রাইভেটের ছাত্র (১৫০ জন)।"</p></li>
+</ul>
+<p id="p20">সে আরও বুঝিয়ে বলল, "খেয়াল কর, যে পাবলিকে পড়ে, তাই সে কোনোভাবেই প্রাইভেটের গ্রুপে থাকতে পারবে না। আবার যে প্রাইভেটে পড়ে, সে পাবলিকে থাকতে পারবে না। এই দুইটা গ্রুপ একে অপরের থেকে সম্পূর্ণ স্বাধীন বা আলাদা। এদের মধ্যে কোনো ওভারল্যাপ নেই এবং আমাদের ডেটা যেহেতু নরমাল ডিস্ট্রিবিউশন ফলো করছে, তাই যখন আমরা এমন সম্পূর্ণ আলাদা দুটো গ্রুপের গড় তুলনা করি, তখন আমরা ব্যবহার করি Independent Samples t-test।"</p>
+<p id="p21">আবির টেস্ট রান করল। তিনজনে মিলে স্ক্রিনের দিকে তাকিয়ে আছে:</p>
+<ul>
+<li><p id="p22">পাবলিকের গড় খরচ: ২২০০ টাকা।</p></li>
+<li><p id="p23">প্রাইভেটের গড় খরচ: ২৮০০ টাকা।</p></li>
+<li><p id="p24">p-value: ০.০৪২</p></li>
+</ul>
+<p id="p25">আবির বলল, "সাব্বির, কপাল খারাপ তোর। ফারহানই জিতে গেল।" সাব্বির হতাশ হয়ে বলল, "মানে?"</p>
+<p id="p26">আবির বুঝিয়ে বলল, "দেখ, p-value হলো ০.০৪২, যা ০.০৫ এর চেয়ে সামান্য হলেও ছোট। তার মানে, পরিসংখ্যান বলছে এই ৬০০ টাকার পার্থক্যটা (২২০০ বনাম ২৮০০) ফাউল কোনো ডেটা নয়। প্রাইভেট ভার্সিটির ছাত্ররা আসলেই পাবলিকের চেয়ে গড়ে বেশি খরচ করে এবং এই পার্থক্যটা Statistically Significant।"</p>
+<p id="p27">ফারহান কলার ঝাঁকিয়ে বলল, "বলেছিলাম না? ডেটা কখনো মিথ্যা বলে না মামা!"</p>
+<h3 id="s2">৩. নিজের সাথে নিজের লড়াই (Paired Samples t-test)</h3>
+<p id="p28">দুপুর গড়িয়ে বিকেল। লাঞ্চের পর আবার বসল তারা। সাব্বির বলল, "আচ্ছা, পাবলিক-প্রাইভেট বাদ দে। আমার মাথায় একটা দারুণ প্রশ্ন ঘুরছে। আমাদের ডেটায় এমন ৫০ জন ছাত্র আছে, যারা সার্ভে ফর্মে লিখেছে গত মাসে তারা নতুন টিউশনি পেয়েছে। এক মাস আগেও তারা বেকার ছিল।"</p>
+<p id="p29">ফারহান বলল, "তো?"</p>
+<p id="p30">সাব্বির চোখ বড় বড় করে বলল, "আমি দেখতে চাই, পকেটে নিজের টাকা আসার পর তাদের শপিং করার স্বভাব বদলায় কি না! মানে, চাকরি পাওয়ার আগে তারা কত খরচ করত, আর পরে কত করছে।"</p>
+<p id="p31">আবির তালি দিয়ে উঠল, "এটা চমৎকার প্রশ্ন! এটাই হবে আমাদের থিসিসের সেরা ফাইন্ডিং। কিন্তু এখানে একটা বিশাল ব্যাপার আছে। এখানে মানুষগুলো কিন্তু ওই একই ৫০ জন। রাহাত বেকার অবস্থায় খরচ করত ৫০০ টাকা। সেই রাহাতই চাকরি পাওয়ার পর খরচ করছে ১৫০০ টাকা। আমরা এখানে রাহাতের সাথে অন্য কারো তুলনা করছি না। আমরা রাহাতের অতীতের সাথে রাহাতের বর্তমানের তুলনা করছি! অর্থাৎ একই ব্যক্তির আগের ও পরের অবস্থার তুলনা করছি।"</p>
+<p id="p32">"যেহেতু স্যাম্পল বা মানুষগুলো একই, শুধু সময়টা আলাদা (Before vs After), তাই একে বলে Paired (জোড়া) Data। একই মানুষের আগের এবং পরের অবস্থার মধ্যে গড় তুলনা করতে আমরা ব্যবহার করি Paired Samples t-test। তবে এই টেস্ট আগের মত তখনই করবো যখন আমাদের ডেটা নরমাল ডিস্ট্রিবিউশন ফলো করবে।"</p>
+<p id="p33">আবির এক্সেল শিট থেকে ওই ৫০ জনের ডেটা আলাদা করে টেস্ট রান করল:</p>
+<ul>
+<li><p id="p34">Mean (Before): ১২০০ টাকা।</p></li>
+<li><p id="p35">Mean (After): ৩০০০ টাকা।</p></li>
+<li><p id="p36">p-value: &lt; ০.০০১ (অর্থাৎ .০০০...)</p></li>
+</ul>
+<p id="p37">আবির শিস দিয়ে উঠল। "ওরে বাবা! দেখছিস অবস্থা? p-value প্রায় শূন্যের কোঠায়। মানে রেজাল্ট সুপার সিগনিফিক্যান্ট! চাকরি পাওয়ার পর ছাত্রদের অনলাইন শপিং খরচ দ্বিগুণেরও বেশি হয়ে গেছে এবং এই পার্থক্যটা শতভাগ সত্যি।"</p>
+<p id="p38">সাব্বির বলল, "তার মানে পকেটে টাকা আসলে মানুষ আর মানুষ থাকে না, শপাহোলিক হয়ে যায়!"</p>
+<p id="p39">সন্ধ্যা হয়ে এল। লাইব্রেরি বন্ধ হবে কিছুক্ষণ পর। আবির ল্যাপটপ বন্ধ করতে করতে বলল, "আজ আমরা অনেক বড় কাজ করেছি। থিসিসের একটা বড় অংশ শেষ।"</p>
+<p id="p40">ফারহান খাতা বের করে বলল, "দোস্ত, ভাইভাতে মোশাররফ স্যার যদি জিজ্ঞেস করেন কেন কোন টেস্ট করলাম, তখন যেন না আটকাই। এক লাইনে একটা সামারি করে দে।"</p>
+<p id="p41">আবির বলল, "লিখে নে:</p>
+<ul>
+<li><p id="p42">১. One-Sample t-test: কখন? যখন আমাদের একটা মাত্র গ্রুপ থাকে এবং তাকে আগে থেকে জানা কোনো নির্দিষ্ট সংখ্যার (যেমন: জাতীয় গড়) সাথে তুলনা করতে হয়।</p></li>
+<li><p id="p43">২. Independent Samples t-test: কখন? যখন সম্পূর্ণ আলাদা দুইটা গ্রুপের মধ্যে তুলনা করি (যেমন: পাবলিক বনাম প্রাইভেট, বা ছেলে বনাম মেয়ে)।</p></li>
+<li><p id="p44">৩. Paired Samples t-test: কখন? যখন একই মানুষের দুই সময়ের অবস্থা তুলনা করি (যেমন: চাকরি পাওয়ার আগে বনাম পরে, বা ওষুধ খাওয়ার আগে বনাম পরে)।</p></li>
+<li><p id="p45">এবং প্রতি ক্ষেত্রেই আমাদের ডেটাকে নরমাল ডিস্ট্রিবিউশন ফলো করতে হবে। নতুবা আমরা এই টেস্ট না করে আগের দিনের মতো নন-প্যারামেট্রিক স্ট্যাটিস্টিক্সে চলে যাবো।"</p></li>
+</ul>
+<p id="p46">নোট নেওয়া শেষ হলে ফারহান একটা লম্বা হাই তুলে বলল, “আজ আর ব্রেইনে লোড নিতে পারছি না দোস্ত। ২টা গ্রুপের হিসাব তো বুঝলাম। কিন্তু আমাদের ডেটায় তো ফ্যাকাল্টিও আছে, সায়েন্স, আর্টস আর বিজনেস। কাল তো এই ৩টা গ্রুপ নিয়েও কাজ করতে হবে।”</p>
+<p id="p47">আবির ব্যাগ কাঁধে নিতে নিতে বলল, “কালকের চিন্তা কাল। তবে এতটুকু বলে রাখি, কাল কিন্তু আর এই t-test দিয়ে কাজ হবে না, আমাদের নতুন এবং বড় কোনো অস্ত্র লাগবে। চল, এখন টঙের দোকানে গিয়ে এক কাপ কড়া রং চা খেয়ে আসি। ওটার সিগনিফিকেন্স লেভেল এখন ১০ এ ১০!”</p>
+<p id="p48"><strong><br />
+</strong></p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-23.html"><span>Previous chapter</span><b>চায়ের কাপে ঝড়</b></a><a class="pg next" href="ch-25.html"><span>Next chapter</span><b>দুইয়ের অধিকের গল্প (ANOVA)</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

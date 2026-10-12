@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</title>
+<meta name="description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="theme-color" content="#b4235a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Statistics Book">
+<meta property="og:type" content="book">
+<meta property="og:title" content="সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন | দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক">
+<meta property="og:description" content="A Bengali statistics book for non-statisticians. Read every chapter online.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/noto-serif-bengali-bengali-400-normal.woff2"><link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>(function(){var r=document.documentElement;function rd(){try{var m=/(?:^|;\s*)sbv=([^;]*)/.exec(window.name||'');return m?JSON.parse(decodeURIComponent(m[1])):{}}catch(e){return{}}}function wr(o){try{window.name='sbv='+encodeURIComponent(JSON.stringify(o))}catch(e){}}window.__sb={get:function(k){var v=null;try{v=localStorage.getItem(k)}catch(e){}if(v===null||v===undefined){var o=rd();v=(k in o)?o[k]:null}return v},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}var o=rd();o[k]=v;wr(o)}};var t=window.__sb.get('sb:theme'),f=window.__sb.get('sb:fs');if(t&&t!=='auto')r.setAttribute('data-theme',t);if(f)r.setAttribute('data-fs',f);try{new MutationObserver(function(){var v=r.getAttribute('data-theme');if(v&&v!==window.__sb.get('sb:theme'))window.__sb.set('sb:theme',v)}).observe(r,{attributes:true,attributeFilter:['data-theme']})}catch(e){}})();</script>
+</head>
+<body>
+<div class="app chapter"><div class="quote" id="quote"><q>All models are wrong, but some are useful.</q><cite>George E. P. Box</cite></div>
+<header class="bar">
+<button class="ib" id="menuBtn" aria-label="Contents" aria-controls="drawer" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="bar-title" href="index.html">দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক</a>
+<span class="bar-sp"></span>
+<button class="ib t" id="fsDown" aria-label="Smaller text">A−</button>
+<button class="ib t" id="fsUp" aria-label="Larger text">A+</button>
+<div class="themewrap"><button class="ib" id="themeBtn" aria-label="Reading theme" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 100 17c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1 .8-1.7 1.8-1.7H17a3.5 3.5 0 003.5-3.5C20.5 6.9 16.7 3.5 12 3.5z"/><circle cx="7.8" cy="11.5" r=".9"/><circle cx="10.2" cy="7.6" r=".9"/><circle cx="14.4" cy="7.6" r=".9"/></svg></button>
+<div class="theme-menu" id="themeMenu" hidden role="group" aria-label="Reading theme">
+<button type="button" data-t="light"><i class="sw" style="background:#f4f6f9"></i>Light</button>
+<button type="button" data-t="sepia"><i class="sw" style="background:#f4ecd8"></i>Sepia</button>
+<button type="button" data-t="mint"><i class="sw" style="background:#e4eee6"></i>Mint</button>
+<button type="button" data-t="dark"><i class="sw" style="background:#0f141c"></i>Dark</button>
+<button type="button" data-t="auto"><i class="sw sw-auto"></i>Match device</button>
+</div></div>
+<button class="ib" id="searchBtn" aria-label="Search the book"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></button>
+<span class="bar-sep" aria-hidden="true"></span>
+<a class="ib soc" href="https://web.facebook.com/zabir.insight" target="_blank" rel="noopener" aria-label="Facebook page" title="Facebook page"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.7V21z"/></svg></a>
+<a class="ib soc" href="https://www.linkedin.com/in/aazabir/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 9.2h3V19h-3zM6 4.6a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM10 9.2h2.9v1.3c.5-.9 1.6-1.5 3-1.5 3.1 0 3.6 2 3.6 4.6V19h-3v-4.9c0-1.2 0-2.7-1.7-2.7s-1.9 1.3-1.9 2.6V19h-3z"/></svg></a>
+</header>
+<div class="progress" id="progress"></div>
+<div class="shell">
+<aside class="drawer" id="drawer" aria-label="Contents">
+<div class="drawer-head"><a href="index.html">Contents</a></div>
+<ol class="toc"><li><a href="ch-00.html">ভূমিকা</a></li><li><a href="ch-01.html">যাত্রা শুরু</a></li><li><a href="ch-02.html">একই পথ, ভিন্ন দৃষ্টি: ডেটার দুনিয়ায় স্বাগতম</a></li><li><a href="ch-03.html">হিসাবের খাতা ও বাইরের জগৎ: ডেটা, স্যাম্পল আর পপুলেশন</a></li><li><a href="ch-04.html">নাম, নম্বর ও শূন্যের গোলকধাঁধা: ডেটার ধরণ ও স্কেল</a></li><li><a href="ch-05.html">গড় মানেই সব সময় এক জিনিস নাঃ সেন্ট্রাল টেন্ডেন্সি</a></li><li><a href="ch-06.html">একই গড়, আলাদা গল্প: বিস্তৃতির পরিমাপ</a></li><li><a href="ch-07.html">ডেটার আকার কথা বলে: ডিস্ট্রিবিউশন, স্কিউনেস ও কার্টোসিস</a></li><li><a href="ch-08.html">অনিশ্চয়তার ভেতরে হিসাব: প্রোবাবিলিটি ও এক্সপেক্টেশন</a></li><li><a href="ch-09.html">অল্প দেখে সব বোঝার চেষ্টা: স্যাম্পলিং ও বায়াস</a></li><li><a href="ch-10.html">প্রশ্নের কাঠগড়ায় ডেটা: হাইপোথিসিস টেস্টিং</a></li><li><a href="ch-11.html">সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</a></li><li><a href="ch-12.html" aria-current="page">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</a></li><li><a href="ch-13.html">সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</a></li><li><a href="ch-14.html">কোন রাস্তা কার জন্য?: সঠিক স্ট্যাটিসটিক্যাল টেস্ট নির্বাচন</a></li><li><a href="ch-15.html">সমুদ্রের পাড়ে মডেলের অসুখ (Diagnostics)</a></li><li><a href="ch-16.html">গাণিতিক ছকে জীবনের সমীকরণ</a></li><li><a href="ch-17.html">শেষ কথা ও নতুন শুরু: সিদ্ধান্ত গ্রহণ ও ইন্টারপ্রিটেশন</a></li><li><a href="ch-18.html">ভাঙা রাস্তার পরিসংখ্যান: সংখ্যা যখন গৌণ, অবস্থানই সব</a></li><li><a href="ch-19.html">দুই সেকশনের লড়াই ও র‍্যাঙ্কের খেলা</a></li><li><a href="ch-20.html">কুইজের আগে ও পরে</a></li><li><a href="ch-21.html">হলের খাবার: কারটা সেরা?</a></li><li><a href="ch-22.html">রুল নম্বর ১: ক্লাস করলেই কি রেজাল্ট ভালো?</a></li><li><a href="ch-23.html">চায়ের কাপে ঝড়</a></li><li><a href="ch-24.html">গড়ের লড়াই: কে এগিয়ে? (The t-tests)</a></li><li><a href="ch-25.html">দুইয়ের অধিকের গল্প (ANOVA)</a></li><li><a href="ch-26.html">ভবিষ্যৎবাণীর প্রথম পাঠ (Regression Analysis)</a></li><li><a href="ch-27.html">হ্যাঁ নাকি না? (Binary Logistic Regression)</a></li><li><a href="ch-28.html">যখন সীমানা থাকে (Tobit &amp; Probit)</a></li><li><a href="ch-29.html">নতুন এক দৃষ্টির শুরু</a></li></ol>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="reader" data-file="ch-12.html">
+<article>
+<h1 class="chapter-title">সংখ্যার পেছনের অদৃশ্য শর্ত: অ্যাজাম্পশন ও ভায়োলেশন</h1>
+<p class="meta">5 min read</p>
+
+<div class="prose">
+
+<p id="p1">দুপুরের সেই অসহ্য ভিড়টা কেটে গিয়ে সেন্ট মার্টিন এখন বেশ শান্ত। সমুদ্রের নীল রংটা বদলে গিয়ে হালকা সবুজে রূপ নিয়েছে। ফারহান সমুদ্রের দিকে তাকিয়ে বলল, “ব্যাপারটা অদ্ভুত না? দুপুরে এই জায়গাটাই একরকম ছিল, এখন একদম আলাদা।”</p>
+<p id="p2">আবির মাথা নেড়ে বলল, “ঠিক এই জায়গাতেই পরিসংখ্যানের অনেক বড় বড় হিসাব ধরা খায়। আমরা ভাবি, একটা ফর্মুলা সব জায়গায় চলবে। কিন্তু প্রতিটি টেস্ট বা ফর্মুলা কাজ করার জন্য কিছু নির্দিষ্ট পরিবেশ বা পূর্বশর্ত লাগে। পরিসংখ্যানে একেই বলে Assumption।”</p>
+<p id="p3">সাব্বির অবাক হয়ে তাকাল। “যেমন?”</p>
+<p id="p4">“যেমন ধর Normality Assumption,” আবির একটু নড়েচড়ে বসল। “সবচেয়ে জনপ্রিয় টেস্টগুলোর, যেমন t-test বা ANOVA এর প্রথম শর্ত হলো ডেটাকে Normal Distribution মেনে চলতে হবে। সহজ কথায়, ডেটা দেখতে ঘণ্টার বা Bell Curve এর মতো হতে হবে।”</p>
+<p id="p5">ফারহান ভ্রু কুঁচকে বলল, “ডেটা আবার ঘণ্টার মতো হয় কীভাবে? আরেকটু ভেঙে বল।”</p>
+<p id="p6">“ধর, আমরা এই দ্বীপে আসা সব পর্যটকের বয়সের হিসাব নিচ্ছি,” আবির সৈকতের দিকে আঙুল তুলল। “তুই দেখবি, এখানে বেশিরভাগ মানুষের বয়সই ২০ থেকে ৩০ এর মধ্যে। খুব ছোট বাচ্চা বা খুব বয়স্ক মানুষের সংখ্যা অনেক কম। এখন এই ডেটা দিয়ে যদি তুই একটা গ্রাফ আঁকিস, দেখবি মাঝখানে অর্থাৎ ২০ থেকে ৩০ বছরের অংশে গ্রাফটা সবচেয়ে উঁচু হয়ে আছে, আর দুই পাশে মানে বাচ্চা ও বয়স্কদের দিকে আস্তে আস্তে নেমে গেছে। দেখতে একদম একটা ঘণ্টার মতো। এটাই নরমাল ডিস্ট্রিবিউশন।”</p>
+<p id="p7">“কিন্তু,” আবির একটু জোর দিয়ে বলল, “ধর আজকে হঠাৎ একটা প্রাইমারি স্কুলের পিকনিকের দল চলে এলো দ্বীপে। তখন কী হবে? গ্রাফের একপাশে, অর্থাৎ বাচ্চাদের দিকে হঠাৎ করে সংখ্যা অনেক বেড়ে যাবে। গ্রাফটা আর সুষম থাকবে না, একদিকে হেলে পড়বে বা Skewed হয়ে যাবে। তখন ওই Normality এর শর্ত ভেঙে যায়। আর শর্ত ভাঙা ডেটার ওপর যদি তুই জোর করে t-test চালাস, তবে হিসাবটা ওই বাচ্চাদের কারণে একদিকে সরে গিয়ে তোকে একটা ডাহা মিথ্যা রেজাল্ট দেবে।”</p>
+<p id="p8">সাব্বির মাথা নাড়ল, “বুঝলাম। তার মানে ডেটার বেশিরভাগ অংশ মাঝামাঝি থাকতে হবে। আর Homogeneity of Variance? এই খটমটে জিনিসটা কী?”</p>
+<p id="p9">আবির হাসল। “নাম খটমটে হলেও জিনিসটা সোজা। Variance মানে হলো ডেটা কতটা ছড়ানো ছিটানো বা Spread। Homogeneity of Variance মানে হলো তুই যে দুটো বা তার বেশি গ্রুপের মধ্যে তুলনা করতে চাচ্ছিস, তাদের ডেটার ছড়ানোর স্বভাবটা কাছাকাছি হতে হবে।”</p>
+<p id="p10">আবির সামনে থাকা চায়ের কাপটা দেখিয়ে বলল, “ধর, আমরা সেন্ট মার্টিনের দুইটা রেস্টুরেন্টের খাবারের দামের তুলনা করব। রেস্টুরেন্ট ক তে ৫টা আইটেম আছে, দামগুলো হলো ১০০, ১২০, ১৩০, ১৪০, আর ১৫০ টাকা। এদের মধ্যে দামের খুব একটা লাফালাফি নেই, Variance খুব কম। কিন্তু রেস্টুরেন্ট খ তে ৫টা আইটেম আছে, যার দাম হলো ২০, ৫০, ৩০০, ৫০০, আর ২০০০ টাকা! এখানে দামের লাফালাফি বা Variance অনেক বেশি।”</p>
+<p id="p11">“এখন তুই যদি শুধু এই দুই রেস্টুরেন্টের গড় দাম বের করে তুলনা করে বলিস যে কোনটা সস্তা, সেটা কি ফেয়ার হবে? হবে না। কারণ রেস্টুরেন্ট খ এর ওই ২০০০ টাকার আইটেমটা পুরো হিসাবটাকে উল্টে দেবে। পরিসংখ্যানের শর্ত হলো, দুই গ্রুপের ভেতরের ডেটার এই লাফালাফি বা Variance কাছাকাছি হতে হবে, নইলে তাদের মধ্যে Fair comparison করা সম্ভব না।”</p>
+<p id="p12">“দারুণ লজিক তো!” ফারহান চোখ বড় করে বলল। “আর ওই যে বললি Independence of Observations? ওটার মানে কী?”</p>
+<p id="p13">“এর মানে হলো তোর নেওয়া প্রতিটা ডেটা পয়েন্ট বা স্যাম্পল পুরোপুরি স্বাধীন হতে হবে। একজনের উত্তরের প্রভাব যেন আরেকজনের ওপর না পড়ে,” আবির বলল।</p>
+<p id="p14">“ধর, তুই পর্যটকদের জিজ্ঞেস করছিস সেন্ট মার্টিন কেমন লাগল? তুই যদি একটা কাপলকে বা একদল বন্ধুকে একসাথে দাঁড় করিয়ে প্রশ্ন করিস, তখন একজন যদি বলে খুব ভালো, বাকিরাও অবচেতনভাবে ওই একই উত্তর দেবে। এখানে তোর ডেটাগুলো আর স্বাধীন বা Independent থাকল না। ৫ জনের গ্রুপ থেকে তুই আসলে ৫টা আলাদা ডেটা পাসনি, তুই একটাই ডেটা পেয়েছিস যা ৫ বার কপি করা হয়েছে! আর এই শর্ত ভাঙলে, পরিসংখ্যান ভাববে তোর কাছে অনেক ডেটা আছে, এবং সে তোকে ভুল কনফিডেন্স দিয়ে বলবে রেজাল্টটা Significant, যা আসলে ডাহা মিথ্যা।”</p>
+<p id="p15">বিকেলের শেষ আলো সমুদ্রে পড়ছে। ফারহান বলল, “তাহলে আমরা কী করব? ডেটা যদি এই শর্তগুলো না মানে, তখন কি গবেষণা বন্ধ করে দেব?”</p>
+<p id="p16">“অবশ্যই না!” আবির হাসল। “তখন আসে রাজপথ আর মেঠো পথের হিসাব। যখন ডেটা এই সব শর্ত, যেমন Normality, Variance, Independence সুন্দর করে মেনে চলে, তখন আমরা যেসব টেস্ট ব্যবহার করি, তাদের বলে Parametric Test। এগুলো হলো হাইওয়ের স্পোর্টস কারের মতো। একদম নিখুঁত, অনেক পাওয়ারফুল। ছোটখাটো তফাৎও এরা খুব সহজে ধরে ফেলতে পারে।”</p>
+<p id="p17">“আর শর্ত না মানলে?” সাব্বির জিজ্ঞেস করল।</p>
+<p id="p18">“তখন স্পোর্টস কার গ্যারেজে রেখে অফ রোড জিপ বা ট্রাক্টর বের করতে হয়। এদের বলে Non-parametric Test। ডেটা যদি স্কিউড হয় বা ভ্যারিয়েন্স সমান নাও হয়, এই টেস্টগুলো পরোয়া করে না। এরা হলো মেঠো পথের গাড়ি। এদের পাওয়ার হয়তো একটু কম, সূক্ষ্ম পার্থক্য হয়তো ধরতে পারে না, কিন্তু এরা অন্তত তোকে খাদে ফেলবে না। অর্থাৎ, ভুল রেজাল্ট দিয়ে তোকে মিসগাইড করবে না।”</p>
+<p id="p19">সে মনে মনে ভাবল, Assumption আসলে কোনো বাধা না। এটা হলো রাস্তার সতর্কবার্তা। এটা বলে দেয় হিসাব কষার আগে একটু থামো, ডেটার চারপাশটা দেখে নাও।</p>
+<p id="p20">সমুদ্র এখন শান্ত। কিন্তু আবির জানে, এই শান্তির নিচেও যেমন ঢেউ আছে, ঠিক তেমনি প্রতিটি সুন্দর সংখ্যার নিচেও কিছু শর্ত লুকিয়ে থাকে। সেই শর্ত না বুঝলে, সংখ্যা যত সুন্দরই হোক, গল্পের আসল মানেটাই ভেঙে পড়ে।</p>
+
+</div>
+</article>
+<nav class="pager" aria-label="Chapter navigation"><a class="pg prev" href="ch-11.html"><span>Previous chapter</span><b>সংখ্যা কিছু বলে, কিন্তু সব বলে না: p-value ও কনফিডেন্স ইন্টারভ্যাল</b></a><a class="pg next" href="ch-13.html"><span>Next chapter</span><b>সম্পর্ক থাকলেই কি সব?: কোরিলেশন ও ইফেক্ট সাইজ</b></a></nav>
+</main>
+</div>
+<footer class="foot" aria-hidden="true"></footer>
+<div class="overlay" id="search" hidden>
+<div class="sheet" role="dialog" aria-label="Search the book">
+<div class="sheet-top"><input id="q" type="search" placeholder="Search the book, e.g. ANOVA or গড়" autocomplete="off"><button class="ib" id="searchClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div id="results" class="results"><p class="hint">Type at least two characters. Works in Bengali and English.</p></div>
+</div></div>
+<div class="overlay lb" id="lightbox" hidden><img alt=""></div></div>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
