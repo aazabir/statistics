@@ -155,6 +155,36 @@
     if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch()}
   });
 })();
+/* Copy attribution: long copied passages get the book name, author and page link appended */
+(function(){
+  var d=document;
+  d.addEventListener('copy',function(e){
+    try{
+      var a=d.activeElement;
+      if(a&&/^(INPUT|TEXTAREA)$/.test(a.tagName))return;
+      var sel=window.getSelection();
+      if(!sel||sel.isCollapsed||!e.clipboardData)return;
+      var txt=sel.toString();
+      if(txt.replace(/\s+/g,' ').trim().length<100)return;
+      var url=location.origin+location.pathname.replace(/index\.html$/,'');
+      var line1='দিস ইজ নট এ স্ট্যাটিস্টিক্স বুক, আব্দুল্লাহ্-আল-জাবির';
+      e.clipboardData.setData('text/plain',txt+'\n\n'+line1+'\n'+url);
+      var box=d.createElement('div');
+      for(var i=0;i<sel.rangeCount;i++)box.appendChild(sel.getRangeAt(i).cloneContents());
+      var p=d.createElement('p');p.appendChild(d.createTextNode(line1));p.appendChild(d.createElement('br'));
+      var l=d.createElement('a');l.href=url;l.textContent=url;p.appendChild(l);
+      box.appendChild(p);
+      e.clipboardData.setData('text/html',box.innerHTML);
+      e.preventDefault();
+    }catch(_){}
+  });
+})();
+
+/* Footer email is assembled here so it is not sitting in the page source as plain text */
+(function(){
+  var a=document.querySelectorAll('a.mail');
+  for(var i=0;i<a.length;i++){var m=a[i].getAttribute('data-u')+'@'+a[i].getAttribute('data-d');a[i].textContent=m;a[i].href='mailto:'+m}
+})();
 
 (function(){
   if(!('serviceWorker' in navigator)||!/^https?:$/.test(location.protocol))return;
