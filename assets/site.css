@@ -1,7 +1,7 @@
 /* Layout concept: a calm reading shell (sticky bar, contents drawer, one measured column) with a data-plot motif on the cover */
 :root{
   --bg:#f4f6f9; --surface:#ffffff; --fg:#172033; --muted:#566176; --line:#d8dee8;
-  --accent:#b4235a; --accent-ink:#ffffff; --band:#b4235a; --band-ink:#ffffff; --tint:#f7e6ee; --mark:#ffe58a;
+  --accent:#1b5e3f; --accent-ink:#ffffff; --band:#1b5e3f; --band-ink:#ffffff; --tint:#e3f0e8; --mark:#ffe58a;
   --display:'Baloo Da 2','Hind Siliguri',sans-serif;
   --serif:'Source Serif 4','Noto Serif Bengali',Georgia,serif;
   --ui:'DM Sans','Hind Siliguri',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -10,21 +10,21 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme]){
     --bg:#0f141c; --surface:#161d28; --fg:#e8ecf3; --muted:#9ba7bb; --line:#293345;
-    --accent:#ff86b0; --accent-ink:#2a0716; --band:#8c1c48; --band-ink:#ffffff; --tint:#2a1a24; --mark:#6b5a14; color-scheme:dark;
+    --accent:#7fd1a5; --accent-ink:#06210f; --band:#14452e; --band-ink:#ffffff; --tint:#16261f; --mark:#6b5a14; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0f141c; --surface:#161d28; --fg:#e8ecf3; --muted:#9ba7bb; --line:#293345;
-  --accent:#ff86b0; --accent-ink:#2a0716; --band:#8c1c48; --band-ink:#ffffff; --tint:#2a1a24; --mark:#6b5a14; color-scheme:dark;
+  --accent:#7fd1a5; --accent-ink:#06210f; --band:#14452e; --band-ink:#ffffff; --tint:#16261f; --mark:#6b5a14; color-scheme:dark;
 }
 /* reading themes for long sessions */
 :root[data-theme="sepia"]{
   --bg:#f3ead7; --surface:#faf3e3; --fg:#3a2f22; --muted:#6c5d4a; --line:#dccfb2;
-  --accent:#a3264f; --accent-ink:#ffffff; --band:#8f2447; --band-ink:#ffffff; --tint:#ecdcc3; --mark:#f1d27a;
+  --accent:#2b6a47; --accent-ink:#ffffff; --band:#1f5a3d; --band-ink:#ffffff; --tint:#ecdcc3; --mark:#f1d27a;
 }
 :root[data-theme="mint"]{
   --bg:#e3eee6; --surface:#edf5ef; --fg:#1e2c23; --muted:#4f6355; --line:#c4d5c8;
-  --accent:#a3264f; --accent-ink:#ffffff; --band:#8f2447; --band-ink:#ffffff; --tint:#d3e5d8; --mark:#e8d77a;
+  --accent:#17614a; --accent-ink:#ffffff; --band:#124f3b; --band-ink:#ffffff; --tint:#d3e5d8; --mark:#e8d77a;
 }
 :root[data-fs="0"]{--fs:.98rem}
 :root[data-fs="1"]{--fs:1.06rem}
