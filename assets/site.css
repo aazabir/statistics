@@ -189,3 +189,12 @@ article{max-width:42rem;margin-inline:auto}
 .note h2{margin:0 0 .45rem;font-family:var(--display);font-weight:700;font-size:1.15rem}
 .note p{margin:0;font-size:.97rem;line-height:1.7;color:var(--muted)}
 .note-line{margin:0 0 1.8rem;padding:.7rem .95rem;border:1px solid var(--line);border-radius:.6rem;background:var(--surface);font-size:.92rem;line-height:1.6;color:var(--muted)}
+
+.updated{margin:2.2rem 0 0;padding:.7rem .95rem;border-left:4px solid var(--accent);border-radius:.4rem;background:var(--tint);font-family:var(--ui);font-size:.9rem;line-height:1.6;color:var(--muted)}
+.updated b{color:var(--fg);font-weight:600;margin-right:.35rem}
+@media print{.updated{display:none!important}}
+
+.adbar{display:block;max-width:34rem;margin:2.4rem auto 0;border:1px solid var(--line);border-radius:.6rem;overflow:hidden;line-height:0;background:var(--surface)}
+.adbar img{display:block;width:100%;height:auto}
+.adbar:hover{border-color:var(--accent)}
+@media print{.adbar{display:none!important}}

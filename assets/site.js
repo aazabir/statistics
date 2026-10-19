@@ -186,6 +186,16 @@
   for(var i=0;i<a.length;i++){var m=a[i].getAttribute('data-u')+'@'+a[i].getAttribute('data-d');a[i].textContent=m;a[i].href='mailto:'+m}
 })();
 
+/* Chapter update notice, visible for 7 days from its date */
+(function(){
+  var n=document.querySelectorAll('.updated[data-date]');
+  for(var i=0;i<n.length;i++){
+    var p=n[i].getAttribute('data-date').split('-');
+    var t=new Date(+p[0],+p[1]-1,+p[2]).getTime(),now=Date.now();
+    if(now>=t&&now<t+7*86400000)n[i].hidden=false;
+  }
+})();
+
 (function(){
   if(!('serviceWorker' in navigator)||!/^https?:$/.test(location.protocol))return;
   addEventListener('load',function(){
