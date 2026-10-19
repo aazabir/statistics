@@ -220,7 +220,6 @@ article{max-width:42rem;margin-inline:auto}
 .acct-id b{font-size:.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .acct-id small{font-size:.8rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .acct-link{display:block;margin-top:.8rem;font-size:.8rem;color:var(--muted)}
-@media (max-width:520px){.bar .soc,.bar-sep{display:none}}
 @media print{.acctwrap{display:none!important}}
 
 /* login label */
@@ -276,3 +275,11 @@ article{max-width:42rem;margin-inline:auto}
 .saved-home .sv-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(18rem,1fr));gap:.6rem}
 .saved-home .sv-list li{margin:0}
 @media print{.mnote{display:none!important}.prose .marked{border:0;padding:0;margin:0}}
+
+.mtoast{position:fixed;z-index:70;left:50%;bottom:max(1.5rem,env(safe-area-inset-bottom,0px));transform:translateX(-50%);padding:.55rem 1rem;border-radius:2rem;background:var(--fg);color:var(--bg);font:600 .85rem var(--ui);box-shadow:0 8px 24px rgba(10,14,22,.3)}
+.mtoast[hidden]{display:none}
+
+.foot-soc{display:flex;justify-content:center;gap:1.2rem;margin:.7rem 0 0}
+.foot-soc a{display:inline-flex;align-items:center;gap:.4rem;color:var(--muted);font-size:.85rem;text-decoration:none}
+.foot-soc a:hover{color:var(--accent)}
+.foot-soc svg{width:1.05rem;height:1.05rem}
