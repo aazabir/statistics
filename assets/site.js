@@ -2,7 +2,16 @@
   var d=document, root=d.documentElement;
   function $(s){return d.querySelector(s)}
   function get(k){return window.__sb?window.__sb.get(k):null}
-  function set(k,v){if(window.__sb)window.__sb.set(k,v)}
+  function raw(k,v){if(window.__sb)window.__sb.set(k,v)}
+  // Every write also gets a timestamp so devices can tell which copy is newer when an account syncs them
+  function set(k,v){
+    raw(k,v);
+    var t=String(Date.now());
+    if(k==='sb:theme'||k==='sb:fs')raw('sb:prefT',t);
+    else if(k==='sb:last')raw('sb:lastT',t);
+    else if(k.indexOf('sb:pos:')===0)raw('sb:pt:'+k.slice(7),t);
+    try{d.dispatchEvent(new CustomEvent('sbchange',{detail:{key:k}}))}catch(e){}
+  }
 
   // quotes
   var QS=[["All models are wrong, but some are useful.", "George E. P. Box"], ["To consult the statistician after an experiment is finished is often merely to ask him to conduct a post mortem examination. He can perhaps say what the experiment died of.", "R. A. Fisher"], ["The null hypothesis is never proved or established, but is possibly disproved, in the course of experimentation.", "R. A. Fisher"], ["Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question.", "John W. Tukey"], ["If you torture the data long enough, it will confess to anything.", "Ronald Coase"], ["Probability theory is nothing but common sense reduced to calculation.", "Pierre-Simon Laplace"]];
@@ -94,11 +103,25 @@
   }
   // home: continue button
   var cb=$('#contBtn');
-  if(cb){
+  function updateContinue(){
+    if(!cb)return;
     var last=get('sb:last');
     var link=last&&d.querySelector('.cards a[href="'+last+'"]');
     if(link){cb.href=last;cb.textContent='Continue Reading · '+link.querySelector('.t').textContent;cb.hidden=false;var st=$('#startBtn');if(st)st.classList.remove('primary');cb.classList.add('primary')}
   }
+  updateContinue();
+
+  // after an account sync, bring the page in line with what the other device saved
+  d.addEventListener('sbsynced',function(){
+    updateContinue();
+    var th=get('sb:theme');
+    if(th){if(th==='auto'){root.removeAttribute('data-theme')}else{root.setAttribute('data-theme',th)}mark()}
+    var f=get('sb:fs');if(f)root.setAttribute('data-fs',f);
+    if(rd&&!location.hash&&scrollY<80){
+      var sv=parseFloat(get('sb:pos:'+rd.getAttribute('data-file'))||'0');
+      if(sv>0.02&&sv<0.95){var h=d.documentElement.scrollHeight-innerHeight;scrollTo(0,h*sv)}
+    }
+  });
 
   // lightbox
   var lb=$('#lightbox');
